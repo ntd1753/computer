@@ -1,0 +1,92 @@
+@extends('layouts.master')
+
+@section('title')
+    @lang('translation.Create_New')
+@endsection
+
+@section('css')
+    <!-- bootstrap datepicker -->
+    <link href="{{ URL::asset('build/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}" rel="stylesheet">
+
+    <!-- dropzone css -->
+    <link href="{{ URL::asset('build/libs/dropzone/dropzone.css') }}" rel="stylesheet" type="text/css" />
+@endsection
+
+@section('content')
+    @component('components.breadcrumb')
+        @slot('li_1')
+            Quản lí Nhãn Hàng
+        @endslot
+        @slot('title')
+            Thông tin chi tiết
+        @endslot
+    @endcomponent
+
+    <form id="brand-frm" method="POST" action="{{route("brand.update",['id'=>$brand->id])}}">
+        @csrf
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="projectname-input" class="form-label">Tên nhãn hàng</label>
+
+                            <input id="projectname-input" name="name" type="text" class="form-control" value="{{$brand->name}}"
+                                placeholder="Nhập tên nhãn hàng" required>
+                            <div class="invalid-feedback">Nhập tên Nhãn Hàng.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Logo</label>
+
+                            <div class="text-center">
+                                <div class="position-relative d-inline-block">
+                                    <div class="position-absolute bottom-0 end-0">
+                                        <label for="project-image-input" class="mb-0" data-bs-toggle="tooltip"
+                                            data-bs-placement="right" title="Chọn ảnh">
+                                            <div class="avatar-xs">
+                                                <button id="button-image"
+                                                    class="avatar-title bg-light border rounded-circle text-muted cursor-pointer shadow font-size-16">
+                                                    <i class='bx bxs-image-alt'></i>
+                                                </button>
+                                                <input type="hidden" name="image"  class="form-control" id="image_label" value="{{$brand->logo}}">
+                                            </div>
+                                        </label>
+                                        <button class="form-control d-none" type="button"
+                                               id="button-image"></button>
+                                    </div>
+                                    <div class="avatar-lg">
+                                        <div class="avatar-title bg-light overflow-hidden" style="width: 11rem; height: 5rem;">
+                                            <img src="{{URL::asset($brand->logo) ?? ""}}" id="img_preview"
+                                                class="avatar-md h-auto object-fit-fill w-100 " />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end card body -->
+                </div>
+                <!-- end card -->
+
+            </div>
+
+
+            <div class="col-12">
+                <div class="text-end mb-4">
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+    </form>
+@endsection
+@section('script')
+    <!-- bootstrap datepicker -->
+    <script src="{{ URL::asset('build/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+    <!-- dropzone plugin -->
+    <script src="{{ URL::asset('build/libs/dropzone/dropzone-min.js') }}"></script>
+    <script src="{{ URL::asset('build/js/pages/project-create.init.js') }}"></script>
+    <script>
+        var inputId='';
+    </script>
+@endsection
