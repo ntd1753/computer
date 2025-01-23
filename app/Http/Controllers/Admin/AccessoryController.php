@@ -46,6 +46,7 @@ class AccessoryController extends Controller
 
     }
     public function add($accessory_type){
+        $accessory_type = strtolower($accessory_type);
         return view("content.accessory.add",
             [
                 'accessoryType'=>$accessory_type,
