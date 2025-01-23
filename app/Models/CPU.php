@@ -14,4 +14,14 @@ class CPU extends Model
         'core_series',
         'socket'
     ];
+    public function detail(){
+        return $this->hasOne(Accessory::class);
+    }
+
+    public static function fillDataCPU($input,$cpu):void{
+        $cpu->core_type = $input['core_type'];
+        $cpu->core_series = $input['core_series'];
+        $cpu->socket = $input['socket'];
+        $cpu->save();
+    }
 }

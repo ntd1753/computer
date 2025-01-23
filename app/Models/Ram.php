@@ -18,4 +18,12 @@ class Ram extends Model
         'memory_size',
         'bus',
     ];
+
+    public static function fillDataRam($input,$ram){
+        $ram->ram_type = $input['ram_type'];
+        $ram->memory_type = $input['memory_type'];
+        $ram->memory_size = $input['memory_size'];
+        $ram->bus = $input['bus'];
+        $ram->save();
+    }
 }

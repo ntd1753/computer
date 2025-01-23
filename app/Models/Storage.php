@@ -16,4 +16,13 @@ class Storage extends Model
         'HDD_SPEED',
         'HDD_CACHE'
     ];
+
+    public static function fillDataStorage($input,$storage){
+        $storage->storage_type = $input['storage_type'];
+        $storage->size = $input['size'];
+        $storage->SSD_type = $input['SSD_type'];
+        $storage->HDD_SPEED = $input['HDD_SPEED'];
+        $storage->HDD_CACHE = $input['HDD_CACHE'];
+        $storage->save();
+    }
 }

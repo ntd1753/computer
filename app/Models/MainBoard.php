@@ -15,4 +15,15 @@ class MainBoard extends Model
         'ram_slot',
         'size'
     ];
+
+    public function detail(){
+        return $this->hasOne(Accessory::class);
+    }
+    public static function  fillDataMainBoard($input,$mainBoard): void{
+        $mainBoard->socket = $input['socket'];
+        $mainBoard->chipset = $input['chipset'];
+        $mainBoard->ram_slot = $input['ram_slot'];
+        $mainBoard->size = $input['size'];
+        $mainBoard->save();
+    }
 }

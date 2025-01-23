@@ -16,4 +16,13 @@ class VGA extends Model
         'inteface',
         'export_port'
     ];
+
+    public static function fillDataVGA($input,$vga){
+        $vga->vga_series = $input['vga_series'];
+        $vga->memory_type = $input['memory_type'];
+        $vga->memory_size = $input['memory_size'];
+        $vga->inteface = $input['inteface'];
+        $vga->export_port = $input['export_port'];
+        $vga->save();
+    }
 }
