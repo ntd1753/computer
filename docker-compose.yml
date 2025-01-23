@@ -11,12 +11,12 @@ services:
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
-      - ./:/var/www/
+      - ./:/var/www/:rw
     networks:
         computer_shop: {}
 
   db:
-    image: mysql:8.4.3
+    image: mysql:8.0
     container_name: computer_shop-db
     restart: unless-stopped
     ports:
