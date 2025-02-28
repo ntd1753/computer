@@ -19,7 +19,18 @@
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="bx bx-user-circle"></i>
                         <span key="t-dashboards">Quản lí người dùng </span>
+                        <ul class="sub-menu" aria-expanded="true">
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow"
+                                   key="t-level-1-2"><i class="bx bxs-save"></i>Nhân viên</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" key="t-level-1-1">
+                                    <i class="bx bx-desktop"></i>Khách hàng
+                                </a>
+                            </li>
 
+                        </ul>
                     </a>
                 </li>
                 <li>
@@ -33,18 +44,6 @@
                         <i class="bx bx-menu"></i>
                         <span key="t-dashboards">Quản lí danh mục</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="true">
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow"
-                               key="t-level-1-2"><i class="bx bxs-save"></i>Nhân viên</a>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" key="t-level-1-1">
-                                <i class="bx bx-desktop"></i>Khách hàng
-                            </a>
-                        </li>
-
-                    </ul>
                 </li>
                 <li>
                     <a href="#" class="has-arrow waves-effect">
