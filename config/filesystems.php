@@ -72,5 +72,6 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
+    's3_url' => env('S3_URL'),
 
 ];

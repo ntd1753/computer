@@ -23,7 +23,7 @@ class CategoryController extends Controller
         $item["parent_id"] = $input["parent_id"];
         $item["name"] = $input["name"];
         $item["slug"] = $input["slug"] ?? Str::slug($input["name"]);
-        $item["icon"] = $input["icon"] ?? null;
+        $item["icon"] = $input["image"] ?? null;
         $item->save();
     }
     public function index(): Factory|View|Application

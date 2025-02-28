@@ -2,8 +2,7 @@
     <div class="col-12 row">
         <div class="mb-3 col-sm-6">
             <label for="name">Tên Sản Phẩm</label>
-            <input id="name" name="name" type="text" class="form-control"
-            >
+            <input id="name" name="name" type="text" class="form-control">
         </div>
         <div class="mb-3 col-sm-6">
             <label for="slug">Loại Sản Phẩm</label>

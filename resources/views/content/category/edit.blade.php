@@ -38,7 +38,7 @@
                         <div class="mb-3">
                             <label for="parent-category-input" class="form-label">Danh Mục Cha</label>
                             <select class="form-control" id="parent-category-input" name="parent_id">
-                                <option value="0">Không có danh mục cha</option>
+                                <option value="">Không có danh mục cha</option>
                                 @include("content.category.category_selected_option", ["categories"=>$categories, "level"=>0, "item"=>$item])
                             </select>
                         </div>
