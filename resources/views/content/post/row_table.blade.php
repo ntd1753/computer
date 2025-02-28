@@ -25,5 +25,5 @@
         </td>
     </tr>
     @include('components.modal.PostModal',['item'=>$item])
-    @include('components.modal.DeleteConfirmModal',['item'=>$item, "name" => "post", "routerName" => "post.destroy"])
+    @include('components.modal.deleteConfirmModal',['item'=>$item, "name" => "post", "routerName" => "post.destroy"])
 @endforeach
