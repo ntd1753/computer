@@ -1,0 +1,14 @@
+<div class="modal fade" id="post-product-modal-{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="post-product-modal-title-{{$item->id}}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="post-product-modal-title-{{$item->id}}">Nội Dung bài viết</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {!! $item->content !!}
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

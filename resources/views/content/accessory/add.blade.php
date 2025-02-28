@@ -42,20 +42,19 @@
                 <div class="card-body row">
                     <div class="col-8">
                         <h4 class="card-title mb-3">Product Images</h4>
-                        <div class="dropzone">
+                        <div onclick="addImage()" class="dropzone" style="cursor: pointer;">
                             <div class="fallback">
-                                <input name="file" type="file" multiple="multiple" name="images[]">
+                                <input type="hidden" multiple="multiple" name="images[]">
                             </div>
-                            <div class="dz-message needsclick">
+                            <div class="dz-message ">
                                 <div class="mb-3">
                                     <i class="display-4 text-muted bx bxs-cloud-upload"></i>
                                 </div>
-
-                                <h4>Drop files here or click to upload.</h4>
+                                <h4>click to upload.</h4>
                             </div>
                         </div>
                         <ul class="list-unstyled mb-0" id="dropzone-preview">
-                            <li class="mt-2" id="dropzone-preview-list">
+                            <li class="mt-2" id="preview-list">
                                 <!-- This is used as the file preview template -->
                                 <div class="border rounded">
                                     <div class="d-flex p-2">
@@ -64,6 +63,7 @@
                                                 <img data-dz-thumbnail class="img-fluid rounded d-block"
                                                      src="https://img.themesbrand.com/judia/new-document.png"
                                                      alt="Dropzone-Image">
+                                                <input type="hidden" name="images[]" value="">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -111,7 +111,6 @@
     <script src="{{ URL::asset('build/libs/select2/js/select2.min.js') }}"></script>
 
     <!-- dropzone plugin -->
-    <script src="{{ URL::asset('build/libs/dropzone/dropzone-min.js') }}"></script>
 
     <!-- init js -->
     <script src="{{ URL::asset('build/js/pages/ecommerce-select2.init.js') }}"></script>
@@ -169,6 +168,41 @@
                 });
             });
         });
+        var inputId='';
+        var countInputId=0;
+        function addImage(){
+            inputId='';
+                html=`
+                    <div class="border rounded">
+                        <div class="d-flex p-2">
+                            <div class="flex-shrink-0 me-3">
+                                <div class="avatar-sm bg-light rounded">
+                                    <img data-dz-thumbnail class="img-fluid rounded d-block" id="img_preview-${countInputId}"
+                                         src=""
+                                         alt="Dropzone-Image">
+                                    <input type="hidden" name="images[]" value="">
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="pt-1">
+                                    <h5 class="fs-md mb-1" data-dz-name>&nbsp;</h5>
+                                    <p class="fs-sm text-muted mb-0" data-dz-size></p>
+                                    <strong class="error text-danger" data-dz-errormessage></strong>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 ms-3">
+                                <button data-dz-remove class="btn btn-sm btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                inputId=countInputId.toString();
+                countInputId++;
+                console.log(inputId);
+                const previewList = document.getElementById('preview-list');
+                previewList.insertAdjacentHTML('beforeend', html);
+                window.open('/file-manager/fm-button', 'fm', 'width=1400,height=800');
 
+        }
     </script>
 @endsection

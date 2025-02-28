@@ -15,11 +15,10 @@ class Post extends Model
         'seo_title', 'seo_keywords', 'seo_description'
     ];
 
-    // Optionally, if you plan to store images as JSON or serialized array, you can cast them:
-    protected $casts = [
-        'images' => 'array', // or 'json' if you are using JSON format for images
-    ];
 
+
+    const TYPE_POST = 'POST';
+    const TYPE_PRODUCT = 'PRODUCT';
     public static function fillDataPost($input,$post){
         $post->title = $input['title'] ?? '';
         $post->slug = Str::slug($input['title']?? '');
@@ -32,4 +31,14 @@ class Post extends Model
         $post->save();
         return $post;
     }
+    public function deleteImages(){
+        if($this->images){
+            foreach($this->images as $image){
+                if(file_exists(public_path($image))){
+                    unlink(public_path($image));
+                }
+            }
+        }
+    }
+
 }
