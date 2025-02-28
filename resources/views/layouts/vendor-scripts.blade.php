@@ -53,8 +53,6 @@
     });
 
     function fmSetLink(url) {
-        url = url.replace(/^.*\/\/[^\/]+/, ''); // remove domain
-        console.log(url)
         if(inputId===''){
             const input_label ='image_label';
             const img_preview ='img_preview';
@@ -64,8 +62,8 @@
         else {
             const input_label ='image_label'+'-'+inputId;
             const img_preview ='img_preview'+'-'+inputId;
-            document.getElementById(input_label).value ="/storage"+url;
-            document.getElementById(img_preview).src="/storage"+url;
+            document.getElementById(input_label).value =url;
+            document.getElementById(img_preview).src=url;
         }
 
     }

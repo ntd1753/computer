@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,5 +53,22 @@ Route::group(['middleware' => ['auth:admin']], function () {
         });
         Route::group(['prefix'=>'pc'],function() {
         });
+    });
+
+    Route::group(['prefix'=>'post'],function() {
+        Route::get('/', [PostController::class,'index'])->name('post.index');
+        Route::get('/add', [PostController::class,'add'])->name('post.add');
+        Route::post('/add', [PostController::class,'store'])->name('post.store');
+        Route::get('/edit/{id}', [PostController::class,'edit'])->name('post.edit');
+        Route::post('/edit/{id}', [PostController::class,'update'])->name('post.update');
+        Route::get('/delete/{id}', [PostController::class,'destroy'])->name('post.destroy');
+    });
+    Route::group(['prefix'=>'user'],function() {
+        Route::get('/', [CategoryController::class,'index'])->name('user.index');
+        Route::get('/add', [CategoryController::class,'add'])->name('user.add');
+        Route::post('/add', [CategoryController::class,'store'])->name('user.store');
+        Route::get('/edit/{id}', [CategoryController::class,'edit'])->name('user.edit');
+        Route::post('/edit/{id}', [CategoryController::class,'update'])->name('user.update');
+        Route::get('/delete/{id}', [CategoryController::class,'destroy'])->name('user.destroy');
     });
 });

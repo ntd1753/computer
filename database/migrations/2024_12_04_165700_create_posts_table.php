@@ -18,10 +18,13 @@ return new class extends Migration
             $table->string('slug', 255)->nullable();
             $table->mediumText('description')->nullable();
             $table->longText('content');
-            $table->json('images')->nullable(); // Assuming this will store a serialized array or JSON
+            $table->text('images')->nullable(); // Assuming this will store a serialized array or JSON
             $table->text('seo_title')->nullable();
             $table->text('seo_keywords')->nullable();
             $table->text('seo_description')->nullable();
+            $table->unsignedInteger('views')->default(0);
+            $table->unsignedInteger('rating_number')->default(0);
+            $table->unsignedInteger('rating_value')->default(0);
             $table->unsignedBigInteger('author_id')->nullable();
             $table->timestamps();
 
