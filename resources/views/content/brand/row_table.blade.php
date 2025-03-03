@@ -1,5 +1,6 @@
 @foreach($brands as $brand)
     <tr>
+        <td>{{$brand->id}}</td>
         <td><img src="{{ URL::asset($brand->logo) ?? " "}}" alt="" class="avatar-sm"></td>
         <td>
             <h5 class="text-truncate font-size-14"><a href="#"

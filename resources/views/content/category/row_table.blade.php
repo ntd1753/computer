@@ -2,6 +2,9 @@
 
     <tr>
         <td>
+            <h5 class="text-truncate font-size-14"><a href="#"
+                                                      class="text-dark">{{$item->id}}</a></h5>
+        <td>
             <h5 class="text-truncate font-size-14 text-start px-3"><a href="#"
                                                       class="text-dark">{{str_repeat("----", $level)}} {{$item->name}}</a></h5>
         </td>

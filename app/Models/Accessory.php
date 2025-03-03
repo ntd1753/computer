@@ -46,6 +46,10 @@ class Accessory extends Model
     {
         return $this->belongsTo(Brand::class);
     }
+    public function category()
+    {
+        return $this->hasOneThrough(Category::class, Product::class, 'detail_id', 'id', 'detail_id', 'category_id');
+    }
     public function detail(){
         switch ($this->type){
             case Accessory::TYPE_RAM:
@@ -86,40 +90,32 @@ class Accessory extends Model
             $accessory->deleteDependence();
         });
     }
-    public static function fillDetailAccessoryByType($accessory_type, $data){
+    public static function fillDetailAccessoryByType($accessory_type, $data, $accessoryDetail){
         switch ($accessory_type){
             case Accessory::TYPE_MAINBOARD:
-                $mainBoard = new MainBoard();
-                MainBoard::fillDataMainBoard($data, $mainBoard);
-                return $mainBoard;
+                MainBoard::fillDataMainBoard($data, $accessoryDetail);
+                return $accessoryDetail;
             case Accessory::TYPE_CPU:
-                $cpu = new CPU();
-                CPU::fillDataCPU($data, $cpu);
-                return $cpu;
+                CPU::fillDataCPU($data, $accessoryDetail);
+                return $accessoryDetail;
             case Accessory::TYPE_RAM:
-                $ram = new Ram();
-                Ram::fillDataRam($data, $ram);
-                return $ram;
+                Ram::fillDataRam($data, $accessoryDetail);
+                return $accessoryDetail;
             case Accessory::TYPE_VGA:
-                $vga = new VGA();
-                VGA::fillDataVGA($data, $vga);
-                return $vga;
+                VGA::fillDataVGA($data, $accessoryDetail);
+                return $accessoryDetail;
             case Accessory::TYPE_PSU:
-                $psu = new PSU();
-                PSU::fillDataPSU($data, $psu);
-                return $psu;
+                PSU::fillDataPSU($data, $accessoryDetail);
+                return $accessoryDetail;
             case Accessory::TYPE_STORAGE:
-                $storage = new Storage();
-                Storage::fillDataStorage($data, $storage);
-                return $storage;
+                Storage::fillDataStorage($data, $accessoryDetail);
+                return $accessoryDetail;
             case Accessory::TYPE_FAN:
-                $fan = new Fan();
-                Fan::fillDataFan($data, $fan);
-                return $fan;
+                Fan::fillDataFan($data, $accessoryDetail);
+                return $accessoryDetail;
             case Accessory::TYPE_CASE:
-                $case = new ComputerCase();
-                ComputerCase::fillDataComputerCase($data, $case);
-                return $case;
+                ComputerCase::fillDataComputerCase($data, $accessoryDetail);
+                return $accessoryDetail;
         }
     }
     public static function fillDataAccessory($input,$accessoryType, $accessory, $accessoryDetail){
@@ -130,4 +126,20 @@ class Accessory extends Model
         $accessory->save();
         return $accessory;
     }
+
+    public function scopeId($query, $filter){
+        return !empty($filter) ? $query->where('id',$filter) : $query;
+    }
+    public function scopeName($query, $filter){
+        return !empty($filter) ? $query->whereHas('product', function ($q) use ($filter) {
+            $q->where('name', 'like', '%' . $filter . '%');
+        }) : $query;
+    }
+    public function scopeBrand($query, $filter){
+        return !empty($filter) ? $query->whereHas('brand', function ($q) use ($filter) {
+            $q->where('name', 'like', '%' . $filter . '%');
+        }) : $query;
+    }
+
+
 }

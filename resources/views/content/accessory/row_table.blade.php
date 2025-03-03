@@ -5,14 +5,32 @@
             {{$item->product->id}}
         </td>
         <td>
-            <h5 class="text-truncate font-size-14 text-start px-3"><a href="#"
+            <h5 class="w-30 font-size-14 text-start px-3"><a href="#"
                                                       class="text-dark">{{$item->product->name ?? ""}}</a></h5>
+        </td>
+        <td>
+            <div class="text-truncate font-size-14 text-start px-3">{{$item->product->category->name ?? ""}}</div>
         </td>
         <td>
             <h5 class="text-truncate font-size-14"><a href="#"
                                                       class="text-dark">{{$item->brand->name}}</a></h5>
         </td>
-        <td><img src="{{$item->img ?? "https://www.studytienganh.vn/upload/2021/05/98140.png"}}" alt="" class="avatar-sm"></td>
+        <td>
+            @php
+                $images = json_decode($item->product->images, true);
+
+            @endphp
+            <div class="d-flex justify-content-center">
+            @if (!empty($images) && is_array($images))
+                @foreach (array_slice($images, 0, 3) as $image)
+                     <img src="{{$image ?? "https://www.studytienganh.vn/upload/2021/05/98140.png"}}" alt="" class="avatar-sm">
+                @endforeach
+                @else
+                    <img src="{{$image ?? "https://www.studytienganh.vn/upload/2021/05/98140.png"}}" alt="" class="avatar-sm">
+            @endif
+            </div>
+
+        </td>
         <td>{{number_format($item->product->cost ?? "")}} VNĐ</td>
         <td>@if ($item->product->discount_type)
                 @if($item->product->discount_type == \App\Models\Product::DISCOUNT_PERCENT)
@@ -37,6 +55,5 @@
         </td>
     </tr>
     @include("components.modal.deleteConfirmModal",["routerName"=>"accessory.destroy",'item'=>$item->product, 'name'=>'sản phẩm', "accessory_type"=>$accessoryType])
-    @include("components.modal.productPostModal",['item'=>$item->product, 'name'=>'danh mục'])
 
 @endforeach

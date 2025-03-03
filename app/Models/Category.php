@@ -13,13 +13,17 @@ class Category extends Model
         'name', 'parent_id', 'icon', 'slug',
     ];
     protected $hidden = ['created_at', 'updated_at'];
-    // If you want to define a relationship where a category can have many child categories
+    public function scopeName($query, $filter){
+        return !empty($filter) ? $query->where('name','like','%'.$filter.'%') : $query;
+    }
+    public function scopeId($query, $filter){
+        return !empty($filter) ? $query->where('id',$filter) : $query;
+    }
     public function subCategories(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Category::class, "parent_id",'id');
     }
 
-    // If you want to define a relationship to the parent category
     public function parent()
     {
         return $this->belongsTo(Category::class, 'parent_id');
@@ -31,7 +35,7 @@ class Category extends Model
         }
     }
 
-    public function getCategoriesWithSub(){
+    public static function getCategoriesWithSub(){
         return Category::where('parent_id','=',null)->with('subCategories')->get();
     }
     public static function boot(): void
