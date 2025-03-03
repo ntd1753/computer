@@ -9,8 +9,10 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    function index(){
-        $brands=Brand::paginate(10);
+    function index(Request $request){
+        $name = $request->get("name");
+        $id = $request->get("id");
+        $brands=Brand::name($name)->id($id)->paginate(10);
         return view('content.brand.index',["brands"=>$brands]);
     }
     function add(){

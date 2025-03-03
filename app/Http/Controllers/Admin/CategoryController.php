@@ -26,9 +26,15 @@ class CategoryController extends Controller
         $item["icon"] = $input["image"] ?? null;
         $item->save();
     }
-    public function index(): Factory|View|Application
+    public function index(Request $request): Factory|View|Application
     {
-        $categories =Category::where('parent_id','=',null)->with('subCategories')->get();
+        $id = $request->get("id");
+        $name = $request->get("name");
+        if (empty($request->all())){
+            $categories =Category::where('parent_id','=',null)->with('subCategories')->paginate(10);
+        }else{
+            $categories =Category::id($id)->name($name)->with('subCategories')->paginate(10);
+        }
         return view("content.category.index",[
             "categories" => $categories,
         ]);

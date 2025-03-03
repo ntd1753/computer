@@ -39,11 +39,17 @@ class PostController extends Controller
         }
         $item->save();
     }
-    public function index(): Factory|View|Application
+    public function index(Request $request): Factory|View|Application
     {
+        $title= $request->get("title");
+        $author= $request->get("author");
+        $post= Post::where('type', Post::TYPE_POST)
+            ->title($title)
+            ->authorName($author)
+            ->orderBy('id', 'DESC')
+            ->paginate(10);
         return view('content.post.index',[
-            "posts" =>
-                Post::where('type', Post::TYPE_POST)->paginate(50),
+            "posts" => $post,
         ]);
 
     }
