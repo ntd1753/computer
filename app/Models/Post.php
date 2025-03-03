@@ -19,18 +19,35 @@ class Post extends Model
 
     const TYPE_POST = 'POST';
     const TYPE_PRODUCT = 'PRODUCT';
-    public static function fillDataPost($input,$post){
+    public function scopeTitle($query, $filter){
+        return !empty($filter) ? $query->where('title','like','%'.$filter.'%') : $query;
+    }
+
+    public function scopeAuthorName($query, $filter)
+    {
+        return !empty($filter) ? $query->whereHas('author', function ($q) use ($filter) {
+            $q->where('name', 'like', '%' . $filter . '%');
+        }) : $query;
+    }
+
+    public function author(){
+        return $this->belongsTo(Admin::class,'author_id','id');
+    }
+    public static function fillDataPost($input,$post, $hasPreviewImages = false){
         $post->title = $input['title'] ?? '';
         $post->slug = Str::slug($input['title']?? '');
         $post->description = $input['description'] ?? "";
         $post->content = $input['content'];
-        $post->images = $input['images']??'';
+        if ($hasPreviewImages) {
+            $post->images = $input['images'] ?? '';
+        }
         $post->seo_title = $input['seo_title'];
         $post->seo_keywords = $input['seo_keywords'];
         $post->seo_description = $input['seo_description'];
         $post->save();
         return $post;
     }
+
     public function deleteImages(){
         if($this->images){
             foreach($this->images as $image){

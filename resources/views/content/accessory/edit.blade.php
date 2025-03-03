@@ -10,6 +10,62 @@
 
     <!-- dropzone css -->
     <link href="{{ URL::asset('build/libs/dropzone/dropzone.css') }}" rel="stylesheet" type="text/css" />
+    <style type="text/css" rel="stylesheet">
+        legend {
+            border-bottom: solid 1px #d2d2d2;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        .image_box {
+            width: 206px;
+            height: 256px;
+            overflow: hidden;
+            position: relative;
+            padding: 5px;
+            border: solid 1px #ddd;
+            background: #f2f2f2;
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+
+        .image_box img {
+            width: 194px;
+            height: 244px;
+            object-fit: cover;
+        }
+
+        .btn_delete_image {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .add_image_button {
+            float: left;
+            width: 206px;
+            height: 256px;
+            border: solid 1px #ddd;
+            background: #f2f2f2;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .add_image_button i {
+            width: 100%;
+            margin-top: 50%;
+            font-size: 40px;
+            color: #02a7f0;
+        }
+
+        .add_image_button span {
+            color: #02a7f0;
+            font-size: 14px;
+        }
+    </style>
+
 @endsection
 
 @section('content')
@@ -18,10 +74,10 @@
             Quản Lí Sản Phẩm
         @endslot
         @slot('title')
-            Thêm Sản Phẩm
+            Sửa thông tin Sản Phẩm
         @endslot
     @endcomponent
-    <form action="{{route('accessory.store',['accessory_type'=>$accessoryType])}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('accessory.update',['accessory_type'=>$accessoryType, 'id' => $accessory->id])}}" method="POST" enctype="multipart/form-data" class="frm_form_add">
         @csrf
         <div class="row">
             <div class="col-12">
@@ -39,8 +95,11 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="slug">Loại Sản Phẩm</label>
-                                    <input id="slug" name="slug" type="text" class="form-control" value="{{strtoupper($accessoryType)}}"
+                                    <input id="slug" type="text"
+                                           class="form-control" value="{{strtoupper($accessoryType)}}"
                                            disabled>
+                                    <input type="hidden" name="product_type"
+                                           class="form-control" value="{{strtoupper($accessoryType)}}">
                                 </div>
                                 <div class="mb-3">
                                     <label for="cost">Giá nhập</label>
@@ -48,11 +107,13 @@
                                            class="form-control">
                                 </div>
                                 <div class="mb-3">
-
                                     <label for="discount-type">Loại Giảm giá</label>
                                     <select id="discount-type" class="form-control" name="discount_type"
+                                    @if(!$accessory->product->discount_type)
+                                        disabled
+                                    @endif
                                     >
-                                        <option
+                                        <option value=""
                                             @if(!$accessory->product->discount_type)
                                             selected
                                             @endif>Chọn Loại Giảm giá</option>
@@ -69,16 +130,19 @@
                                             Giảm Giá Trực Tiếp</option>
                                     </select>
                                 </div>
-
-
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label class="control-label">Danh Mục</label>
+
                                     <select class="form-control" name="category_id">
+
                                         <option>Chọn Danh Mục</option>
-                                        @include('content.accessory.category_selected_option', ['item'=>$accessory->product, "categories" =>$categories, 'level' => 0])
+                                        @include('content.accessory.category_selected_option',
+                                            ['item'=>$accessory->product,
+                                            "categories" =>$categories,
+                                            'level' => 0])
                                     </select>
                                 </div>
                                 <div class="mb-3">
@@ -104,13 +168,20 @@
                                 <div class="mb-3 row">
                                     <div class="col-10">
                                         <label for="discount-value">Giảm Giá</label>
-                                        <input id="discount-value" name="discount_value" type="text" class="form-control" value="{{$accessory->product->discount_value??""}}"
+                                        <input id="discount-value" name="discount_value" type="text"
+                                               class="form-control" value="{{$accessory->product->discount_value??""}}"
+                                               @if(!$accessory->product->discount_type)
+                                                   disabled
+                                            @endif
                                         >
                                     </div>
 
                                     <div class="col-2 d-flex align-items-end">
                                         <div class="form-check form-switch form-switch-lg mb-2" dir="ltr">
                                             <input class="form-check-input" type="checkbox" id="discount-checkbox"
+                                                    @if($accessory->product->discount_type)
+                                                    checked
+                                                    @endif
                                             >
                                             <label class="form-check-label" for="discount-checkbox"></label>
                                         </div></div>
@@ -131,44 +202,35 @@
                     <div class="card-body row">
                         <div class="col-8">
                             <h4 class="card-title mb-3">Product Images</h4>
-                            <div class="dropzone">
-                                <div class="fallback">
-                                    <input name="file" type="file" multiple="multiple" name="images[]">
-                                </div>
-                                <div class="dz-message needsclick">
-                                    <div class="mb-3">
-                                        <i class="display-4 text-muted bx bxs-cloud-upload"></i>
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="gallery_container">
+                                        <div id = "image_container" class="image_container property_gallery">
+                                            @php
+                                                $previewImgs = json_decode($accessory->product->images, true);
+                                            @endphp
+                                            @foreach($previewImgs as $image)
+                                                <div class="image_box">
+                                                    <img src="{{$image}}">
+                                                    <button type="button" class="btn btn-warning btn_delete_image">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                    <input type="hidden" name="images[]" value="{{$image}}">
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                        <div class="add_image_button" data-preview="property_gallery" data-type="images">
+                                            <i class="fa fa-image"></i>
+                                            <span>Chọn ảnh</span>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+
                                     </div>
 
-                                    <h4>Drop files here or click to upload.</h4>
                                 </div>
                             </div>
-                            <ul class="list-unstyled mb-0" id="dropzone-preview">
-                                <li class="mt-2" id="dropzone-preview-list">
-                                    <!-- This is used as the file preview template -->
-                                    <div class="border rounded">
-                                        <div class="d-flex p-2">
-                                            <div class="flex-shrink-0 me-3">
-                                                <div class="avatar-sm bg-light rounded">
-                                                    <img data-dz-thumbnail class="img-fluid rounded d-block"
-                                                         src="https://img.themesbrand.com/judia/new-document.png"
-                                                         alt="Dropzone-Image">
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <div class="pt-1">
-                                                    <h5 class="fs-md mb-1" data-dz-name>&nbsp;</h5>
-                                                    <p class="fs-sm text-muted mb-0" data-dz-size></p>
-                                                    <strong class="error text-danger" data-dz-errormessage></strong>
-                                                </div>
-                                            </div>
-                                            <div class="flex-shrink-0 ms-3">
-                                                <button data-dz-remove class="btn btn-sm btn-danger">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+
                         </div>
                         <div class="col-4">
                             <h4 class="card-title mb-3">Data Sheet</h4>
@@ -228,6 +290,94 @@
                 }
             });
         });
+        $(document).ready(function () {
+            $('.frm_form_add').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'post',
+                    dataType: 'json',
+                    data: $(this).serialize(),
+                    beforeSend: function () {
+                        showPreload();
+                    },
+                    complete: function () {
+                        hidePreload();
+                    },
+                    success: function (res) {
+                        if (res.success) {
+                            //showSuccessMessage(res.message);
+                            setTimeout(function () {
+                                location.href = res.url;
+                            }, 1000);
+                        } else {
+                            // showErrorMessage(res.message);
+                        }
+                    },
+                    error: function (e) {
+                        showErrorValidate(e);
+                    }
+                });
+            });
+        });
 
     </script>
+    <script type="text/javascript" language="JavaScript">
+        $(document).ready(function () {
+
+            $(document).on('click', '.btn_delete_image', function () {
+                let numberImage = $(this).parent().parent().find('.image_box').length;
+                $(this).parent().parent().parent().parent().find('.number_image').text(numberImage - 1);
+                $(this).parent().remove();
+
+            });
+
+            $(document).ready(function () {
+                $('.add_image_button').click(function () {
+                    window.open('/file-manager/fm-button', 'fm', 'width=1400,height=800');
+
+
+                    let preview = $(this).data('preview');
+                    let target_preview = $('.' + preview);
+                    let type = $(this).attr('data-type');
+
+                    $('#file_input').off('change').on('change', function () {
+                        let files = $('#file_input')[0].files;
+                        if (files.length > 0) {
+                            Array.from(files).forEach((file) => {
+                                let formData = new FormData();
+                                formData.append('file', file)
+                                ;
+                            });
+                        }
+                    });
+                });
+            });
+
+        });
+        function fmSetLink(url) {
+            var $div = $('<div>').addClass('image_box');
+            var $img = $('<img>').attr('src', `${url}`);
+            $div.append($img);
+            var $button = $('<button>').attr('type', 'button').addClass('btn btn-warning btn_delete_image');
+            var $icon = $('<i>').addClass('fa fa-trash');
+            $button.append($icon);
+            $div.append($button);
+            var $input = $('<input>').attr({
+                'type': 'hidden',
+                'id': 'file_input',
+                'name': 'images[]',
+                'value': url
+            });
+            $div.append($input);
+
+            $('#image_container').append($div);
+
+            $button.on('click', function() {
+                $div.remove(); // Xóa div khi nhấn nút
+            });
+        }
+
+    </script>
+
 @endsection

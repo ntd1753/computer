@@ -10,6 +10,62 @@
 
     <!-- dropzone css -->
     <link href="{{ URL::asset('build/libs/dropzone/dropzone.css') }}" rel="stylesheet" type="text/css" />
+    <style type="text/css" rel="stylesheet">
+        legend {
+            border-bottom: solid 1px #d2d2d2;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        .image_box {
+            width: 206px;
+            height: 256px;
+            overflow: hidden;
+            position: relative;
+            padding: 5px;
+            border: solid 1px #ddd;
+            background: #f2f2f2;
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+
+        .image_box img {
+            width: 194px;
+            height: 244px;
+            object-fit: cover;
+        }
+
+        .btn_delete_image {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .add_image_button {
+            float: left;
+            width: 206px;
+            height: 256px;
+            border: solid 1px #ddd;
+            background: #f2f2f2;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .add_image_button i {
+            width: 100%;
+            margin-top: 50%;
+            font-size: 40px;
+            color: #02a7f0;
+        }
+
+        .add_image_button span {
+            color: #02a7f0;
+            font-size: 14px;
+        }
+    </style>
+
 @endsection
 
 @section('content')
@@ -42,44 +98,23 @@
                 <div class="card-body row">
                     <div class="col-8">
                         <h4 class="card-title mb-3">Product Images</h4>
-                        <div onclick="addImage()" class="dropzone" style="cursor: pointer;">
-                            <div class="fallback">
-                                <input type="hidden" multiple="multiple" name="images[]">
-                            </div>
-                            <div class="dz-message ">
-                                <div class="mb-3">
-                                    <i class="display-4 text-muted bx bxs-cloud-upload"></i>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="gallery_container">
+                                    <div id = "image_container" class="image_container property_gallery">
+
+                                    </div>
+                                    <div class="add_image_button" data-preview="property_gallery" data-type="images">
+                                        <i class="fa fa-image"></i>
+                                        <span>Chọn ảnh</span>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
                                 </div>
-                                <h4>click to upload.</h4>
+
                             </div>
                         </div>
-                        <ul class="list-unstyled mb-0" id="dropzone-preview">
-                            <li class="mt-2" id="preview-list">
-                                <!-- This is used as the file preview template -->
-                                <div class="border rounded">
-                                    <div class="d-flex p-2">
-                                        <div class="flex-shrink-0 me-3">
-                                            <div class="avatar-sm bg-light rounded">
-                                                <img data-dz-thumbnail class="img-fluid rounded d-block"
-                                                     src="https://img.themesbrand.com/judia/new-document.png"
-                                                     alt="Dropzone-Image">
-                                                <input type="hidden" name="images[]" value="">
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <div class="pt-1">
-                                                <h5 class="fs-md mb-1" data-dz-name>&nbsp;</h5>
-                                                <p class="fs-sm text-muted mb-0" data-dz-size></p>
-                                                <strong class="error text-danger" data-dz-errormessage></strong>
-                                            </div>
-                                        </div>
-                                        <div class="flex-shrink-0 ms-3">
-                                            <button data-dz-remove class="btn btn-sm btn-danger">Delete</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                     <div class="col-4">
                         <h4 class="card-title mb-3">Data Sheet</h4>
@@ -170,39 +205,62 @@
         });
         var inputId='';
         var countInputId=0;
-        function addImage(){
-            inputId='';
-                html=`
-                    <div class="border rounded">
-                        <div class="d-flex p-2">
-                            <div class="flex-shrink-0 me-3">
-                                <div class="avatar-sm bg-light rounded">
-                                    <img data-dz-thumbnail class="img-fluid rounded d-block" id="img_preview-${countInputId}"
-                                         src=""
-                                         alt="Dropzone-Image">
-                                    <input type="hidden" name="images[]" value="">
-                                </div>
-                            </div>
-                            <div class="flex-grow-1">
-                                <div class="pt-1">
-                                    <h5 class="fs-md mb-1" data-dz-name>&nbsp;</h5>
-                                    <p class="fs-sm text-muted mb-0" data-dz-size></p>
-                                    <strong class="error text-danger" data-dz-errormessage></strong>
-                                </div>
-                            </div>
-                            <div class="flex-shrink-0 ms-3">
-                                <button data-dz-remove class="btn btn-sm btn-danger">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                inputId=countInputId.toString();
-                countInputId++;
-                console.log(inputId);
-                const previewList = document.getElementById('preview-list');
-                previewList.insertAdjacentHTML('beforeend', html);
-                window.open('/file-manager/fm-button', 'fm', 'width=1400,height=800');
+    </script>
+    <script type="text/javascript" language="JavaScript">
+        $(document).ready(function () {
 
+            $(document).on('click', '.btn_delete_image', function () {
+                let numberImage = $(this).parent().parent().find('.image_box').length;
+                $(this).parent().parent().parent().parent().find('.number_image').text(numberImage - 1);
+                $(this).parent().remove();
+
+            });
+
+            $(document).ready(function () {
+                $('.add_image_button').click(function () {
+                    window.open('/file-manager/fm-button', 'fm', 'width=1400,height=800');
+
+
+                    let preview = $(this).data('preview');
+                    let target_preview = $('.' + preview);
+                    let type = $(this).attr('data-type');
+
+                    $('#file_input').off('change').on('change', function () {
+                        let files = $('#file_input')[0].files;
+                        if (files.length > 0) {
+                            Array.from(files).forEach((file) => {
+                                let formData = new FormData();
+                                formData.append('file', file)
+                                ;
+                            });
+                        }
+                    });
+                });
+            });
+
+        });
+        function fmSetLink(url) {
+            var $div = $('<div>').addClass('image_box');
+            var $img = $('<img>').attr('src', `${url}`);
+            $div.append($img);
+            var $button = $('<button>').attr('type', 'button').addClass('btn btn-warning btn_delete_image');
+            var $icon = $('<i>').addClass('fa fa-trash');
+            $button.append($icon);
+            $div.append($button);
+            var $input = $('<input>').attr({
+                'type': 'hidden',
+                'id': 'file_input',
+                'name': 'images[]',
+                'value': url
+            });
+            $div.append($input);
+
+            $('#image_container').append($div);
+
+            $button.on('click', function() {
+                $div.remove(); // Xóa div khi nhấn nút
+            });
         }
+
     </script>
 @endsection
