@@ -4,6 +4,7 @@ use Alexusmai\LaravelFileManager\Services\ConfigService\DefaultConfigRepository;
 use Alexusmai\LaravelFileManager\Services\ACLService\ConfigACLRepository;
 
 return [
+    'url' => env('S3_URL'),
 
     /**
      * Set Config repository
