@@ -50,6 +50,11 @@
             @include('layouts.footer')
         </div>
         <!-- end main content-->
+        <div class="preload"
+             style="display: none; width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 99999; background: rgba(0, 0, 0, 0.3);">
+            <i class="fa fa-spinner fa-spin"
+               style="position: fixed; top: 30%; left: 50%; font-size: 30px; margin-left: -15px;"></i>
+        </div>
     </div>
     <!-- END layout-wrapper -->
 

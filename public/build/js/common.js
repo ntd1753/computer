@@ -30,3 +30,10 @@ function showErrorValidate(error) {
     else{
     }
 }
+function showErrorMessage(message) {
+    toastr.error(message);
+}
+
+function showSuccessMessage(message) {
+    toastr.success(message);
+}
