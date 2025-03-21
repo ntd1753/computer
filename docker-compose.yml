@@ -36,7 +36,7 @@ services:
     container_name: computer_shop-nginx
     restart: unless-stopped
     ports:
-      - "8009:80"
+      - "80:80"
     volumes:
       - ./:/var/www/
       - ./docker-compose/nginx:/etc/nginx/conf.d
