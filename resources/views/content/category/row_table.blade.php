@@ -16,8 +16,12 @@
 
         <td >
             <div class="d-flex align-items-center justify-content-center w-100 text-center">
-                <div><a href="{{route("category.edit",["id"=>$item->id])}}"><i class="bx bx-edit-alt text-warning fs-3 fw-medium"></i></a></div>
-                <div><a href="#" data-bs-toggle="modal" data-bs-target="#delete-confirm-modal-{{$item->id}}"><i class="bx bx-trash-alt text-danger fs-3 fw-medium"></i></a></div>
+                @if(in_array(\App\Models\CustomPermission::getPermissionByKey('AddACategory'), \App\Models\CustomPermission::getValidPermissions()))
+                    <div><a href="{{route("category.edit",["id"=>$item->id])}}"><i class="bx bx-edit-alt text-warning fs-3 fw-medium"></i></a></div>
+                @endif
+                @if(in_array(\App\Models\CustomPermission::getPermissionByKey('DeleteACategory'), \App\Models\CustomPermission::getValidPermissions()))
+                        <div><a href="#" data-bs-toggle="modal" data-bs-target="#delete-confirm-modal-{{$item->id}}"><i class="bx bx-trash-alt text-danger fs-3 fw-medium"></i></a></div>
+                @endif
             </div>
 
         </td>

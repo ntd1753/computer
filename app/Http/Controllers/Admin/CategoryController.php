@@ -31,9 +31,9 @@ class CategoryController extends Controller
         $id = $request->get("id");
         $name = $request->get("name");
         if (empty($request->all())){
-            $categories =Category::where('parent_id','=',null)->with('subCategories')->paginate(10);
+            $categories =Category::where('parent_id','=',null)->with('subCategories')->paginate(5);
         }else{
-            $categories =Category::id($id)->name($name)->with('subCategories')->paginate(10);
+            $categories =Category::id($id)->name($name)->with('subCategories')->paginate(5);
         }
         return view("content.category.index",[
             "categories" => $categories,
