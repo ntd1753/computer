@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50);
             $table->unsignedBigInteger('parent_id')->nullable()->unsigned(); // Assuming this is a parent-child relationship
-            $table->string('icon', 50)->nullable();
+            $table->string('icon', 255)->nullable();
             $table->string('slug', 50)->unique();
             $table->timestamps();
 

@@ -40,13 +40,14 @@
             </div>
         </form>
     </div>
-
+@if(in_array(\App\Models\CustomPermission::getPermissionByKey('AddABrand'), \App\Models\CustomPermission::getValidPermissions()))
     <div>
         <a href="{{route('brand.add')}}">
             <button type="button" class="btn btn-primary waves-effect waves-light my-3"><i class="bx bx-plus"></i>Thêm Nhãn Hàng</button>
-
         </a>
     </div>
+@endif
+
     <div class="row">
         <div class="col-lg-12">
             <div class="">
