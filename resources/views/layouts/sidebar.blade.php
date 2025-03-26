@@ -81,8 +81,13 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript: void(0);" key="t-level-1-1">
-                                    <i class="bx bx-desktop"></i>PC
+                                <a href="{{route('pc.index')}}" key="t-level-1-1">
+                                    <i class="bx bx-desktop"></i>PC tùy chỉnh
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('prebuiltPc.index')}}" key="t-level-1-1">
+                                    <i class="bx bx-desktop"></i>PC built sẵn
                                 </a>
                             </li>
 
@@ -92,8 +97,7 @@
                 @if(in_array(\App\Models\CustomPermission::getPermissionByKey('PostManagement'), \App\Models\CustomPermission::getValidPermissions()))
                     <li>
                         <a href="{{route('post.index')}}" class="waves-effect">
-                            <i class="bx bx-book-content
-"></i>
+                            <i class="bx bx-book-content"></i>
                             <span key="t-dashboards">Quản lí bài viết</span>
                         </a>
                     </li>

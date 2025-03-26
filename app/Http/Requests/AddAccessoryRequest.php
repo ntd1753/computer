@@ -92,15 +92,15 @@ class AddAccessoryRequest extends FormRequest
                 $rules = array_merge($rules, [
                     'storage_type' => 'required|in:SSD,HDD',
                     'size' => 'required|string|max:255',
-                    'SSD_type' => 'required|string|max:255',
-                    'HDD_SPEED' => 'required|string|max:255',
-                    'HDD_CACHE' => 'required|string|max:255',
+                    'SSD_type' => 'nullable|string|max:255',
+                    'HDD_SPEED' => 'nullable|string|max:255',
+                    'HDD_CACHE' => 'nullable|string|max:255',
                 ]);
                 break;
 
             case Accessory::TYPE_FAN:
                 $rules = array_merge($rules, [
-                    'type' => 'required|in:AirFan,AIOFan,CaseFan',
+                    'fan_type' => 'required|in:AirFan,AIOFan,CaseFan',
                     'CPU_socket' => 'required|string|max:255',
                     'height' => 'required|string|max:255',
                     'fan_size' => 'required|string|max:255',

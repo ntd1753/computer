@@ -2,10 +2,10 @@
     <div class="col-sm-12 row">
         <div class="mb-3 col-sm-6">
             <label for="type">Fan Type</label>
-            <select id="type" name="type" class="form-control">
-                <option value="AirFan" {{ old('type', $fan->type ?? '') == 'AirFan' ? 'selected' : '' }}>AirFan</option>
-                <option value="AIOFan" {{ old('type', $fan->type ?? '') == 'AIOFan' ? 'selected' : '' }}>AIOFan</option>
-                <option value="CaseFan" {{ old('type', $fan->type ?? '') == 'CaseFan' ? 'selected' : '' }}>CaseFan</option>
+            <select id="type" name="fan_type" class="form-control">
+                <option value="AirFan" {{ old('fan_type', $fan->type ?? '') == 'AirFan' ? 'selected' : '' }}>AirFan</option>
+                <option value="AIOFan" {{ old('fan_type', $fan->type ?? '') == 'AIOFan' ? 'selected' : '' }}>AIOFan</option>
+                <option value="CaseFan" {{ old('fan_type', $fan->type ?? '') == 'CaseFan' ? 'selected' : '' }}>CaseFan</option>
             </select>
         </div>
         <div class="mb-3 col-sm-6">

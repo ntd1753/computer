@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('fans', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['AirFan', 'AIOFan', 'CaseFan']);
+            $table->enum('fan_type', ['AirFan', 'AIOFan', 'CaseFan']);
             $table->string('CPU_socket');
             $table->string('height');
             $table->string('fan_size');

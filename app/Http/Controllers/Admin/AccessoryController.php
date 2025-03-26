@@ -9,10 +9,14 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\ComputerCase;
 use App\Models\CPU;
+use App\Models\Fan;
 use App\Models\MainBoard;
 use App\Models\Post;
 use App\Models\Product;
+use App\Models\PSU;
 use App\Models\Ram;
+use App\Models\Storage;
+use App\Models\VGA;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Http\Request;
@@ -86,7 +90,7 @@ class AccessoryController extends Controller
     }
 
     public function add($accessory_type){
-        $accessory_type = strtolower($accessory_type);
+        $accessory_type=strtolower($accessory_type);
         return view("content.accessory.add",
             [
                 'accessoryType'=>$accessory_type,

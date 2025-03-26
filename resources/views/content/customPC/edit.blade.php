@@ -136,7 +136,7 @@
                                 <div class="mb-3">
                                     <label class="control-label">Danh Mục</label>
 
-                                    <select class="form-control select2" name="category_id">
+                                    <select class="form-control" name="category_id">
 
                                         <option>Chọn Danh Mục</option>
                                         @include('content.accessory.category_selected_option',
@@ -148,7 +148,7 @@
                                 <div class="mb-3">
                                     <label class="control-label">Nhãn Hàng</label>
 
-                                    <select class="form-control select2" name="brand_id"
+                                    <select class="form-control" name="brand_id"
                                     >
                                         <option>Chọn Nhãn Hàng</option>
                                         @foreach($brands as $brand)

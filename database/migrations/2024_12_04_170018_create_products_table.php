@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('slug', 255);
 
             // Enum type for the 'type' column
-            $table->enum('type', ['PC', 'ACCESSORY']);
-
+            $table->enum('type', ['PC', 'ACCESSORY', 'LAPTOP', 'CUSTOM_PC']);
             $table->bigInteger('cost');
             $table->bigInteger('price');
             $table->bigInteger('discount_type')->nullable();

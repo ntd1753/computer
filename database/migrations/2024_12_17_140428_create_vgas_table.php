@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('memory_type');
             $table->string('memory_size');
             $table->text('inteface');
-            $table->text('export_port');
             $table->timestamps();
         });
     }

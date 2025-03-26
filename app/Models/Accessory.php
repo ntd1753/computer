@@ -5,12 +5,13 @@ namespace App\Models;
 use App\Traits\addAccessory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Accessory extends Model
 {
     use HasFactory;
     protected $table = 'accessories';
-
+    protected $with = ['product'];
     protected $fillable = [
         'brand_id',
         'type',
@@ -126,7 +127,13 @@ class Accessory extends Model
         $accessory->save();
         return $accessory;
     }
-
+    public static function getProductByType($type){
+        return DB::table('accessories')
+            ->join('products', 'accessories.id', '=', 'products.detail_id')
+            ->where('accessories.type', $type)
+            ->select('products.id', 'products.name')
+            ->get();
+    }
     public function scopeId($query, $filter){
         return !empty($filter) ? $query->where('id',$filter) : $query;
     }
@@ -140,6 +147,7 @@ class Accessory extends Model
             $q->where('name', 'like', '%' . $filter . '%');
         }) : $query;
     }
-
-
+    public function scopeType($query, $filter){
+        return !empty($filter) ? $query->where('type',$filter) : $query;
+    }
 }
