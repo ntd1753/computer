@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fans', function (Blueprint $table) {
+        Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->enum('fan_type', ['AirFan', 'AIOFan', 'CaseFan']);
-            $table->string('CPU_socket');
-            $table->string('height');
-            $table->string('fan_size');
-            $table->string('led_type');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('product_id')->constrained()->onDelete('cascade');
+            $table->integer('quantity')->default(1);
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('fans');
+        Schema::dropIfExists('carts');
     }
 };

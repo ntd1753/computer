@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('slug', 255);
 
             // Enum type for the 'type' column
-            $table->enum('type', ['PC', 'ACCESSORY']);
-
+            $table->enum('type', ['PC', 'ACCESSORY', 'LAPTOP', 'CUSTOM_PC']);
             $table->bigInteger('cost');
             $table->bigInteger('price');
             $table->bigInteger('discount_type')->nullable();
             $table->bigInteger('discount_value')->nullable();
+            $table->unsignedInteger('quantity')->nullable();
 
             // Images encoded in JSON format
             $table->json('images')->nullable(); // Assuming this will store JSON

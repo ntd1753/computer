@@ -8,7 +8,9 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ConfigController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\PcController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\PrebuiltPcController;
 use App\Http\Controllers\Admin\RolePermissionController;
 use App\Http\Controllers\Admin\UserController;
 
@@ -52,14 +54,28 @@ Route::group(['middleware' => ['auth:admin']], function () {
     });
     Route::prefix('product')->middleware(['checkPermissionByFunction:'.CustomPermission::getPermissionByKey('ProductManagement')])->group(function() {
         Route::group(['prefix'=>'accessory/{accessory_type}'],function() {
-            Route::get('/',[AccessoryController::class,'index'])->name("accessory.index"); // danh sách
-            Route::get('/add', [AccessoryController::class,'add'])->name('accessory.add'); // Trả về form thêm mới
-            Route::post('/add', [AccessoryController::class,'store'])->name('accessory.store'); // tạo mới
-            Route::get('/edit/{id}', [AccessoryController::class,'edit'])->name('accessory.edit'); // Trả về form edit
-            Route::post('/edit/{id}', [AccessoryController::class,'update'])->name('accessory.update'); // Update
-            Route::get('/delete/{id}', [AccessoryController::class,'destroy'])->name('accessory.destroy'); // delete
+            Route::get('/',[AccessoryController::class,'index'])->name("accessory.index");
+            Route::get('/add', [AccessoryController::class,'add'])->name('accessory.add');
+            Route::post('/add', [AccessoryController::class,'store'])->name('accessory.store');
+            Route::get('/edit/{id}', [AccessoryController::class,'edit'])->name('accessory.edit');
+            Route::post('/edit/{id}', [AccessoryController::class,'update'])->name('accessory.update');
+            Route::get('/delete/{id}', [AccessoryController::class,'destroy'])->name('accessory.destroy');
         });
         Route::group(['prefix'=>'pc'],function() {
+            Route::get('/',[PcController::class,'index'])->name("pc.index");
+            Route::get('/add', [PcController::class,'add'])->name('pc.add');
+            Route::post('/add', [PcController::class,'store'])->name('pc.store');
+            Route::get('/edit/{id}', [PcController::class,'edit'])->name('pc.edit');
+            Route::post('/edit/{id}', [PcController::class,'update'])->name('pc.update');
+            Route::get('/delete/{id}', [PcController::class,'destroy'])->name('pc.destroy');
+        });
+        Route::group(['prefix'=>'prebuilt-pc'],function() {
+            Route::get('/',[PrebuiltPcController::class,'index'])->name("prebuiltPc.index");
+            Route::get('/add', [PrebuiltPcController::class,'add'])->name('prebuiltPc.add');
+            Route::post('/add', [PrebuiltPcController::class,'store'])->name('prebuiltPc.store');
+            Route::get('/edit/{id}', [PrebuiltPcController::class,'edit'])->name('prebuiltPc.edit');
+            Route::post('/edit/{id}', [PrebuiltPcController::class,'update'])->name('prebuiltPc.update');
+            Route::get('/delete/{id}', [PrebuiltPcController::class,'destroy'])->name('prebuiltPc.destroy');
         });
     });
 

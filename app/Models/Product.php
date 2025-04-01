@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Seeders\LaptopAndPrebuiltPCSeeder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,15 +15,15 @@ class Product extends Model
         'images', 'post_id', 'category_id', 'detail_id'
     ];
 
-    // Cast images field to JSON array for easier manipulation
-    protected $casts = [
-        'images' => 'array', // This will automatically decode the JSON into an array
-    ];
     const TYPE_PC = 'PC';
     const TYPE_ACCESSORY = 'ACCESSORY';
+    const TYPE_LAPTOP = 'LAPTOP';
+    const TYPE_CUSTOM_PC = 'CUSTOM_PC';
     public static $listType = [
         self::TYPE_PC => 'PC',
         self::TYPE_ACCESSORY => 'Linh kiện',
+        self::TYPE_LAPTOP => 'Laptop',
+        self::TYPE_CUSTOM_PC => 'Custom PC',
     ];
     // Define relationships (if applicable)
     const DISCOUNT_PERCENT = 1;
@@ -47,9 +48,15 @@ class Product extends Model
     public function detail()
     {
         if ($this->type === 'PC') {
-            return $this->belongsTo(PC::class, 'detail_id');
+            return $this->belongsTo(LaptopAndPrebuiltPc::class, 'detail_id')
+                ->where('product_type', LaptopAndPrebuiltPc::TYPE_PC);
         } elseif ($this->type === 'ACCESSORY') {
             return $this->belongsTo(Accessory::class, 'detail_id');
+        } elseif ($this->type === 'LAPTOP') {
+            return $this->belongsTo(LaptopAndPrebuiltPc::class, 'detail_id')
+                ->where('product_type', LaptopAndPrebuiltPc::TYPE_LAPTOP);
+        } elseif ($this->type === 'CUSTOM_PC') {
+            return $this->belongsTo(CustomPc::class, 'detail_id');
         }
         return null;
     }
@@ -62,6 +69,12 @@ class Product extends Model
         static::deleting(function($product){
             $product->deleteDependence();
         });
+    }
+    public function scopeId($query, $filter){
+       return !empty($filter) ? $query->where('id', $filter) : $query;
+    }
+    public function scopeName($query, $filter){
+        return !empty($filter) ? $query->where('name', 'like', "%$filter%") : $query;
     }
 }
 
