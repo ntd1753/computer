@@ -22,6 +22,7 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->bigInteger('discount_type')->nullable();
             $table->bigInteger('discount_value')->nullable();
+            $table->unsignedInteger('quantity')->nullable();
 
             // Images encoded in JSON format
             $table->json('images')->nullable(); // Assuming this will store JSON

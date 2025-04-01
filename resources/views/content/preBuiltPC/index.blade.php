@@ -87,4 +87,10 @@
 {{--        @include("components.modal.productPostModal",['item'=>$item, 'name'=>'danh mục'])--}}
 
     @endforeach
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-center">
+                {{ $listItem->links() }}
+            </div>
+        </div>
 @endsection

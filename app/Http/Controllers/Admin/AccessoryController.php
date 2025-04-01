@@ -161,7 +161,6 @@ class AccessoryController extends Controller
             foreach ($request->get('images') as $item) {
                 $images[] = $item;
             }
-
             $product->images = json_encode($images);
         }
         $product->save();

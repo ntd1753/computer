@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                    {!! $item->dataSheet !!}
+                    {!! $item->data_sheet !!}
             </div>
 
         </div><!-- /.modal-content -->

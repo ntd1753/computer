@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('cpu_fan', 255)->nullable();
             $table->string('hdd_size', 50)->nullable();
             $table->string('ssd_size', 50)->nullable();
+            $table->longText('data_sheet')->nullable();
             $table->timestamps();
         });
     }

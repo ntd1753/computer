@@ -17,7 +17,7 @@ return new class extends Migration
             $table->enum('type', ['CPU', 'RAM', 'STORAGE', 'PSU', 'CASE', 'MainBoard', 'FAN', 'VGA'])
                 ->comment('Type of accessory component');  // Enum cho cột "type"
             $table->foreignId('detail_id');
-            $table->text('dataSheet')->nullable();
+            $table->text('data_sheet')->nullable();
             $table->timestamps();
         });
     }

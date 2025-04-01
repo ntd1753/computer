@@ -236,7 +236,7 @@
                             <h4 class="card-title mb-3">Data Sheet</h4>
 
                             <textarea id="dataSheet" name="dataSheet">
-                            {!! $accessory->dataSheet !!}
+                            {!! $accessory->data_sheet !!}
                         </textarea>
                         </div>
                     </div>

@@ -123,7 +123,7 @@ class Accessory extends Model
         $accessory['brand_id'] = $input['brand_id'];
         $accessory['type'] = $accessoryType;
         $accessory['detail_id'] = $accessoryDetail->id;
-        $accessory['dataSheet'] = $input['dataSheet'] ?? '';
+        $accessory['data_sheet'] = $input['dataSheet'] ?? '';
         $accessory->save();
         return $accessory;
     }

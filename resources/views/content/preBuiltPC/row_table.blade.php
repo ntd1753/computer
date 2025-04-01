@@ -14,10 +14,11 @@
 
         <td>
             @php
-//                $images = json_decode($item->images, true);
+                $images = json_decode($item->images, true);
             @endphp
             <div class="d-flex justify-content-center">
             @if (!empty($images) && is_array($images))
+
                 @foreach (array_slice($images, 0, 3) as $image)
                      <img src="{{$image ?? "https://www.studytienganh.vn/upload/2021/05/98140.png"}}" alt="" class="avatar-sm">
                 @endforeach

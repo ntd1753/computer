@@ -15,10 +15,6 @@ class Product extends Model
         'images', 'post_id', 'category_id', 'detail_id'
     ];
 
-    // Cast images field to JSON array for easier manipulation
-    protected $casts = [
-        'images' => 'array', // This will automatically decode the JSON into an array
-    ];
     const TYPE_PC = 'PC';
     const TYPE_ACCESSORY = 'ACCESSORY';
     const TYPE_LAPTOP = 'LAPTOP';
