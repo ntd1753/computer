@@ -18,7 +18,6 @@
         <td>
             @php
                 $images = json_decode($item->product->images, true);
-
             @endphp
             <div class="d-flex justify-content-center">
             @if (!empty($images) && is_array($images))

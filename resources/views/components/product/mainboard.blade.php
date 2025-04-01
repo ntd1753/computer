@@ -13,7 +13,7 @@
     <div class="col-sm-6">
         <div class="mb-3">
             <label for="ramslot">RAM Slot</label>
-            <input id="ramslot" name="ramslot" type="text" class="form-control" value="{{ old('ramslot', $mainBoard->ramslot ?? '') }}">
+            <input id="ramslot" name="ram_slot" type="text" class="form-control" value="{{ old('ramslot', $mainBoard->ramslot ?? '') }}">
         </div>
         <div class="mb-3">
             <label for="size">Size</label>

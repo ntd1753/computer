@@ -16,22 +16,23 @@
     <div class="col-12 row">
         <div class="mb-3 col-6">
             <label class="control-label">Danh Mục</label>
-            <select class="form-control" name="category_id">
+            <select class="form-control select2" name="category_id">
                 <option>Chọn Danh Mục</option>
                 @include('content.accessory.category_option', ["categories" =>$categories, 'level' => 0])
             </select>
         </div>
+        @if(!empty($brands))
         <div class="mb-3 col-6">
-    <label class="control-label">Nhãn Hàng</label>
+            <label class="control-label">Nhãn Hàng</label>
+             <select class="form-control select2" name="brand_id">
+                    <option>Chọn Nhãn Hàng</option>
+                 @foreach($brands as $brand)
+                     <option value="{{$brand->id}}">{{$brand->name}}</option>
+                 @endforeach
+             </select>
+        </div>
+        @endif
 
-    <select class="form-control" name="brand_id"
-    >
-        <option>Chọn Nhãn Hàng</option>
-        @foreach($brands as $brand)
-            <option value="{{$brand->id}}">{{$brand->name}}</option>
-        @endforeach
-    </select>
-</div>
     </div>
     <div class="col-12 row">
         <div class="mb-3 col-sm-6">
@@ -44,7 +45,6 @@
             <input id="price" name="price" type="text" class="form-control"
                    placeholder="Price">
         </div>
-
     </div>
     <div class="col-12 row">
         <div class="mb-3  col-sm-6">
