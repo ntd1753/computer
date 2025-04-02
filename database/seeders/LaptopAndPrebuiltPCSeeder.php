@@ -154,12 +154,12 @@ class LaptopAndPrebuiltPCSeeder extends Seeder
                     'https://cmscpt.s3.ap-southeast-1.amazonaws.com/250-27018-d0a7c1d9d621707f2930.jpg',
                     'https://cmscpt.s3.ap-southeast-1.amazonaws.com/250-27525-khung-pc.jpg'
                 ]),
-                'post_id' => $index + 12,
+                'post_id' => $index + 49,
                 'quantity' => rand(10,100),
                 'discount_type' => $discount_type,
                 'discount_value' => $discount_value,
                 'category_id' => $pc['category_id'], // Prebuilt PC category
-                'detail_id' => $index + 11,
+                'detail_id' => $index + 49,
                 'created_at' => now(),
                 'updated_at' => now(),
             ];
