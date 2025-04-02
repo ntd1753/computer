@@ -18,6 +18,12 @@ return new class extends Migration
             $table->bigInteger('total');
             $table->bigInteger('discount')->default(0);
             $table->bigInteger('total_amount');
+            $table->string('order_status')->nullable();
+            $table->string('payment_status')->nullable();
+            $table->string('customer_name');
+            $table->string('customer_email');
+            $table->string('customer_phone');
+            $table->text('customer_address');
             $table->timestamps();
         });
     }
