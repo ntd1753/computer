@@ -44,6 +44,7 @@ class Post extends Model
         $post->seo_title = $input['seo_title'];
         $post->seo_keywords = $input['seo_keywords'];
         $post->seo_description = $input['seo_description'];
+        $post->category_id = $input['category_id'];
         $post->save();
         return $post;
     }

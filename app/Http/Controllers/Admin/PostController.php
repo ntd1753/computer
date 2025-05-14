@@ -22,7 +22,7 @@ class PostController extends Controller
     protected function fillDataToPost($item, $input, $is_create) : void
     {
         $item["title"] = $input["name"] ?? "";
-        $item["slug"] = $input["slug"] ?? Str::slug($item["name"]);
+        $item["slug"] = $input["slug"] ?? Str::slug($item["title"]);
         $item["description"] = $input["description"] ?? "";
         $item["content"] = $input["content"] ?? "";
         $item["seo_title"] = $input["seo_title"] ?? "";
@@ -31,6 +31,7 @@ class PostController extends Controller
         $item["images"] = $input["images"] ?? "";
         $item["type"] = Post::TYPE_POST;
         $item["author_id"] = Auth::id();
+        $item["category_id"] = $input["category_id"] ?? null;
         if ($is_create)
         {
             $item["views"] = 0;
@@ -56,7 +57,9 @@ class PostController extends Controller
 
     public function add(): Factory|View|Application
     {
-        return view("content.post.add");
+        return view("content.post.add", [
+            "categories" => Category::where('type', Category::TYPE_BLOG)->get(),
+        ]);
     }
     public function store(AddPostRequest $request): \Illuminate\Http\JsonResponse
     {
@@ -73,6 +76,8 @@ class PostController extends Controller
         if (!$post) return redirect()->back();
         return view("content.post.edit",[
             "item" => $post,
+            "categories" => Category::where('type', Category::TYPE_BLOG)->get(),
+
         ]);
     }
 

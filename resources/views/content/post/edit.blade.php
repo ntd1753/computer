@@ -47,6 +47,14 @@
                                     <input id="metakeywords" name="seo_keywords" type="text" class="form-control" value="{{$item->seo_keywords ?? ""}}"
                                            placeholder="Meta Keywords">
                                 </div>
+                                <div class="mb-3">
+                                    <label for="category_id">Chọn danh mục</label><br>
+                                    <select class="select2 form-control" id="category_id" name="category_id">
+                                        <option value="">Chọn danh mục</option>
+                                        @include('content.post.category_selected_option', ["categories" =>$categories, 'level' => 0, 'item' => $item])
+                                    </select>
+                                </div>
+
                             </div>
 
                             <div class="mb-3 col-sm-6">
@@ -68,7 +76,7 @@
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label for="metadescription">Mô tả</label>
-                                    <textarea class="form-control" id="content" rows="5" placeholder="Meta Description" name="description">{!! $item->content ?? ""!!}</textarea>
+                                    <textarea class="form-control" id="content" rows="5" placeholder="Meta Description" name="description">{!! $item->description ?? ""!!}</textarea>
                                 </div>
 
                             </div>

@@ -13,7 +13,7 @@
         </td>
         <td>
             <h5 class="text-truncate font-size-14"><a href="#"
-                                                      class="text-dark">{{$item->brand->name}}</a></h5>
+                                                      class="text-dark">{{$item->product->brand->name}}</a></h5>
         </td>
         <td>
             @php

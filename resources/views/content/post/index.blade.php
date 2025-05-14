@@ -72,6 +72,7 @@
     </div>
     @foreach($posts as $item)
         @include('components.modal.SeoModal',['item'=>$item])
+        @include('components.modal.PostModal',['item'=>$item])
 
     @endforeach
     <div class="row">

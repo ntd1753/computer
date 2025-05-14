@@ -13,7 +13,7 @@
         @endslot
     @endcomponent
     <div class="card p-3">
-        <form class="mt-4" method="GET" action="{{route('category.index')}}">
+        <form class="mt-4" method="GET" action="{{route('category.index', ['model_type' => $model_type])}}">
             <div class="row">
                 <div class="col-lg-6 col-sm-6">
                     <div class="mb-0">
@@ -42,7 +42,7 @@
     </div>
 
     <div>
-        <a href="{{route('category.add')}}">
+        <a href="{{route('category.add', ['model_type' =>$model_type])}}">
             <button type="button" class="btn btn-primary waves-effect waves-light my-3"><i class="bx bx-plus"></i>Thêm Danh Mục</button>
 
         </a>
@@ -62,7 +62,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @include('content.category.row_table',['categories'=>$categories,"level"=>0])
+                            @include('content.category.row_table',['categories'=>$categories,"level"=>0, 'model_type'=>$model_type])
                         </tbody>
                     </table>
                 </div>

@@ -11,7 +11,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Đóng</button>
-                <a href="{{route($routerName,['accessory_type'=>$accessoryType ?? "", 'id' => $item->id])}}"><button type="button" class="btn btn-danger">Xóa</button></a>
+                <a href="{{route($routerName,['accessory_type'=>$accessoryType ?? "", 'id' => $item->id ,'model_type'=>$model_type ?? ""])}}"><button type="button" class="btn btn-danger">Xóa</button></a>
             </div>
         </div>
     </div>
