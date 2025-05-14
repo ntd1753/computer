@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 255)->nullable();
             $table->enum('type', ['POST', 'PRODUCT']);
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->string('slug', 255)->nullable();
             $table->mediumText('description')->nullable();
             $table->longText('content');
@@ -29,7 +30,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('author_id')->references('id')->on('admins')->onDelete('set null');
-
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
         });
     }
 

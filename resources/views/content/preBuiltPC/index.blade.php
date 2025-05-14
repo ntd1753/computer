@@ -83,8 +83,8 @@
         </div>
     </div>
     @foreach($listItem as  $item)
-{{--        @include("components.modal.productDataSheetModal",['item'=>$item->detail])--}}
-{{--        @include("components.modal.productPostModal",['item'=>$item, 'name'=>'danh mục'])--}}
+        @include("components.modal.productDataSheetModal",['item'=>$item->detail])
+        @include("components.modal.productPostModal",['item'=>$item, 'name'=>'danh mục'])
 
     @endforeach
     <div class="row">

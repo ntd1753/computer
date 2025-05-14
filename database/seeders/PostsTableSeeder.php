@@ -15,9 +15,7 @@ class PostsTableSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-
         $data = [];
-
         for ($i = 1; $i <= 10; $i++) { // Seed 100 bản ghi
             $type = "POST";
             $data[] = [

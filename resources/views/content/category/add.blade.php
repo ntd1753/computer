@@ -22,7 +22,7 @@
         @endslot
     @endcomponent
 
-    <form id="brand-frm" method="POST" action="{{route("category.store")}}">
+    <form id="brand-frm" method="POST" action="{{route("category.store", ['model_type' => $model_type])}}">
         @csrf
         <div class="row">
             <div class="col-12">

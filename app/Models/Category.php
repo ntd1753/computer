@@ -10,8 +10,10 @@ class Category extends Model
     use HasFactory;
     protected $table = 'categories';
     protected $fillable = [
-        'name', 'parent_id', 'icon', 'slug',
+        'name', 'parent_id', 'icon', 'slug', 'type'
     ];
+    const TYPE_PRODUCT = 'product';
+    const TYPE_BLOG = 'blog';
     protected $hidden = ['created_at', 'updated_at'];
     public function scopeName($query, $filter){
         return !empty($filter) ? $query->where('name','like','%'.$filter.'%') : $query;

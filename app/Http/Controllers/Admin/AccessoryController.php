@@ -23,6 +23,10 @@ use Illuminate\Http\Request;
 
 class AccessoryController extends Controller
 {
+    private function getCategories($model_type){
+        return Category::where('type','=', $model_type)->whereNull('parent_id')->with('subCategories')->get();
+    }
+
     protected function createDetailAccessory($accessory_type)
     {
         switch ($accessory_type) {
@@ -59,6 +63,7 @@ class AccessoryController extends Controller
         $product->name = $input['name'];
         $product->slug = Str::slug($input['name']);
         $product->type = Product::TYPE_ACCESSORY; // Adjust according to product type
+        $product->brand_id = $input['brand_id'];
         $product->cost = $input['cost'];
         $product->price = $input['price'];
         $product->discount_type = $input['discount_type'] ?? null; // Default to null if not provided
@@ -94,7 +99,7 @@ class AccessoryController extends Controller
         return view("content.accessory.add",
             [
                 'accessoryType'=>$accessory_type,
-                'categories' => (new \App\Models\Category)->getCategoriesWithSub(),
+                'categories' => $this->getCategories(Category::TYPE_PRODUCT),
                 'brands' => Brand::all(),
             ]
         );
@@ -136,7 +141,7 @@ class AccessoryController extends Controller
         return view("content.accessory.edit",
             [
                 'accessoryType'=>$accessory_type,
-                'categories' =>  Category::getCategoriesWithSub(),
+                'categories' =>  $this->getCategories(Category::TYPE_PRODUCT),
                 'brands' => Brand::all(),
                 'accessory' => Accessory::find($id),
             ]

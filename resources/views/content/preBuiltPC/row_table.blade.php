@@ -29,11 +29,12 @@
 
         </td>
         <td>{{number_format($item->cost ?? "")}} VNĐ</td>
-        <td>@if ($item->discount_type)
-                @if($item->product->discount_type == \App\Models\Product::DISCOUNT_PERCENT)
-                    {{number_format((1-$item->discount_value/100)*$item->product->price)}} VNĐ
+        <td>@if ($item->discount_type !=null)
+
+                @if($item->discount_type == \App\Models\Product::DISCOUNT_PERCENT)
+                    {{number_format((1-$item->discount_value/100)*$item->price)}} VNĐ
                 @else
-                    {{number_format($item->price-$item->product->discount_value)}} VNĐ
+                    {{number_format($item->price-$item->discount_value)}} VNĐ
 
                 @endif
             @else

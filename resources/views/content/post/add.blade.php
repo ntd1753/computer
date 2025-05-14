@@ -47,8 +47,14 @@
                                 <input id="metakeywords" name="seo_keywords" type="text" class="form-control" value="{{$item->seo_keywords ?? ""}}"
                                        placeholder="Meta Keywords">
                             </div>
+                            <div class="mb-3">
+                                <label for="category_id">Chọn danh mục</label><br>
+                                <select class="select2 form-control" id="category_id" name="category_id">
+                                    <option value="">Chọn danh mục</option>
+                                    @include('content.post.category_option', ["categories" =>$categories, 'level' => 0])
+                                </select>
+                            </div>
                         </div>
-
                         <div class="mb-3 col-sm-6">
                             <label for="name" class="form-label">Preview Image</label><br>
                             <input type="hidden" name="images" id="image_label">

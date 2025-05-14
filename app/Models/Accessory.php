@@ -118,9 +118,10 @@ class Accessory extends Model
                 ComputerCase::fillDataComputerCase($data, $accessoryDetail);
                 return $accessoryDetail;
         }
+        return $accessoryDetail;
     }
     public static function fillDataAccessory($input,$accessoryType, $accessory, $accessoryDetail){
-        $accessory['brand_id'] = $input['brand_id'];
+
         $accessory['type'] = $accessoryType;
         $accessory['detail_id'] = $accessoryDetail->id;
         $accessory['data_sheet'] = $input['dataSheet'] ?? '';

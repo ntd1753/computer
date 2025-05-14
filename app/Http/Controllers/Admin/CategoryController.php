@@ -13,74 +13,68 @@ use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:admin');
+    private function getCategories($model_type){
+        return Category::where('type','=', $model_type)->whereNull('parent_id')->with('subCategories')->get();
     }
-
-    private function fillData($item, $input): void
+    private function fillData($item, $input, $model_type): void
     {
         $item["parent_id"] = $input["parent_id"];
         $item["name"] = $input["name"];
         $item["slug"] = $input["slug"] ?? Str::slug($input["name"]);
         $item["icon"] = $input["image"] ?? null;
+        $item["type"] = $model_type;
         $item->save();
     }
-    public function index(Request $request): Factory|View|Application
+    public function index($model_type): Factory|View|Application
     {
-        $id = $request->get("id");
-        $name = $request->get("name");
-        if (empty($request->all())){
-            $categories =Category::where('parent_id','=',null)->with('subCategories')->paginate(5);
-        }else{
-            $categories =Category::id($id)->name($name)->with('subCategories')->paginate(5);
-        }
         return view("content.category.index",[
-            "categories" => $categories,
+            "categories" => $this->getCategories($model_type),
+            'model_type' => $model_type,
         ]);
     }
-    public function add(): Factory|View|Application
+    public function add($model_type): Factory|View|Application
     {
-        $categories =Category::where('parent_id','=',null)->with('subCategories')->get();
         return view("content.category.add",[
-            "categories" => $categories,
+            "categories" => $this->getCategories($model_type),
+            'model_type' => $model_type,
         ]);
     }
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request, $model_type): RedirectResponse
     {
         $input = $request->all();
         $category = new Category();
-        $this->fillData($category, $input);
+        $this->fillData($category, $input, $model_type);
 
-        return redirect()->route("category.index");
+        return redirect()->route("category.index", $model_type);
     }
 
-    public function edit($id): Factory|View|Application|RedirectResponse
+    public function edit($model_type, $id): Factory|View|Application|RedirectResponse
     {
-        $categories =Category::where('parent_id','=',null)->with('subCategories')->get();
-
         $item = Category::find($id);
-        if (!$item) return redirect()->back();
+        if (!$item)
+            return redirect()->back();
 
         return view('content.category.edit', [
             "item"=>$item,
-            "categories" => $categories,
+            "categories" => $this->getCategories($model_type),
+            'model_type' => $model_type,
         ]);
     }
 
-    public function update($id, Request $request): RedirectResponse
+    public function update($model_type, $id, Request $request): RedirectResponse
     {
         $item = Category::find($id);
         if (!$item) return redirect()->back();
         $input = $request->all();
-        $this->fillData($item, $input);
-        return redirect()->route("category.index");
+
+        $this->fillData($item, $input, $model_type);
+        return redirect()->route("category.index", $model_type);
     }
-    public function destroy($id): RedirectResponse
+    public function destroy($model_type,$id): RedirectResponse
     {
         $item = Category::find($id);
         if (!$item) return redirect()->back();
         $item->delete();
-        return redirect()->route("category.index");
+        return redirect()->route("category.index", $model_type);
     }
 }

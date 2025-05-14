@@ -53,10 +53,22 @@
 
                 @if(in_array(\App\Models\CustomPermission::getPermissionByKey('CategoryManagement'), \App\Models\CustomPermission::getValidPermissions()))
                     <li>
-                        <a href="{{route('category.index')}}" class="waves-effect">
+                        <a href="#" class="has-arrow waves-effect">
                             <i class="bx bx-menu"></i>
-                            <span key="t-dashboards">Quản lí danh mục</span>
+                            <span key="t-multi-level">Quản lí danh mục</span>
                         </a>
+                        <ul class="sub-menu" aria-expanded="true">
+                            <li>
+                                <a href="{{route('category.index',['model_type'=>\App\Models\Category::TYPE_PRODUCT])}}"
+                                   key="t-level-1-2">Quản lí danh mục sản phẩm</a>
+                            </li>
+                            <li>
+                                <a href="{{route('category.index',['model_type'=>\App\Models\Category::TYPE_BLOG])}}" class=" waves-effect"
+                                   key="t-level-1-2">Quản lí danh mục blog</a>
+                            </li>
+
+
+                        </ul>
                     </li>
                 @endif
                 @if(in_array(\App\Models\CustomPermission::getPermissionByKey('ProductManagement'), \App\Models\CustomPermission::getValidPermissions()))
@@ -117,6 +129,14 @@
                             <span key="t-dashboards">Cấu hình website</span>
                         </a>
                     </li>
+                @endif
+                @if(in_array(\App\Models\CustomPermission::getPermissionByKey('OrderManagement'), \App\Models\CustomPermission::getValidPermissions()))
+                <li>
+                    <a href="{{route('order.index')}}" class="waves-effect">
+                        <i class="bx bx-image-add"></i>
+                        <span key="t-dashboards">Quản lí Đơn hàng</span>
+                    </a>
+                </li>
                 @endif
             </ul>
         </div>

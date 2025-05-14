@@ -44,6 +44,7 @@
                 <div class="container-fluid">
                     @yield('content')
                 </div>
+
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
@@ -64,6 +65,8 @@
 
     <!-- JAVASCRIPT -->
     @include('layouts.vendor-scripts')
-</body>
+    @yield('script')
+
+    </body>
 
 </html>

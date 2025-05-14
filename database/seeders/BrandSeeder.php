@@ -15,16 +15,24 @@ class BrandSeeder extends Seeder
         $faker = Faker::create();
 
         $brands = [
-            'Intel',
-            'AMD',
-            'NVIDIA',
-            'Asus',
-            'MSI',
-            'Gigabyte',
-            'Corsair',
-            'Samsung',
-            'Kingston',
-            'Western Digital',
+            'Intel', //1
+            'AMD', //2
+            'Dell', //3
+            'Acer', //4
+            'HP', //5
+            'Lenovo', //6
+            'Apple', //7
+            'Razer', //8
+            'Logitech', //9
+            'NVIDIA', //10
+            'Asus', //11
+            'MSI', //12
+            'Gigabyte', //13
+            'Corsair', //14
+            'Samsung', //15
+            'Kingston', //16
+            'Western Digital', //17
+            'Microsoft', //18
         ];
 
         $data = [];

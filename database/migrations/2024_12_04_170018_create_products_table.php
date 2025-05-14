@@ -23,19 +23,20 @@ return new class extends Migration
             $table->bigInteger('discount_type')->nullable();
             $table->bigInteger('discount_value')->nullable();
             $table->unsignedInteger('quantity')->nullable();
-
             // Images encoded in JSON format
             $table->json('images')->nullable(); // Assuming this will store JSON
 
             $table->unsignedBigInteger('post_id')->nullable(); // Assuming it's a foreign key
             $table->unsignedBigInteger('category_id')->nullable(); // Assuming it's a foreign key
             $table->unsignedBigInteger('detail_id')->nullable(); // Assuming it's a foreign key
+            $table->unsignedBigInteger('brand_id')->nullable();
 
             $table->timestamps();
 
             // Foreign key constraints (if needed)
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('set null');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('set null');
         });
     }
 

@@ -22,7 +22,8 @@
         @endslot
     @endcomponent
 
-    <form id="brand-frm" method="POST" action="{{route("category.store")}}">
+    <form id="brand-frm" method="POST" action="{{route("category.update", ['model_type' => $model_type, 'id' => $item->id])}}"
+          enctype="multipart/form-data" class="needs-validation" novalidate>
         @csrf
         <div class="row">
             <div class="col-12">

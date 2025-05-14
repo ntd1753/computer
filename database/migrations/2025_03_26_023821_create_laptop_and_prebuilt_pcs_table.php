@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('laptop_and_prebuilt_pcs', function (Blueprint $table) {
             $table->id();
             $table->string('product_type', 50);
-            $table->string('screen_size', 50)->nullable();
+            $table->double('screen_size')->nullable();
             $table->string('cpu', 255);
             $table->string('ram', 50);
             $table->string('ram_memory', 50);

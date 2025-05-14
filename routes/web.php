@@ -44,7 +44,7 @@ Route::group(['middleware' => ['auth:admin']], function () {
         Route::post('/edit/{id}', [BrandController::class,'update'])->name('brand.update'); // Update
         Route::get('/delete/{id}', [BrandController::class,'destroy'])->name('brand.destroy'); // delete
     });
-    Route::prefix('category')->middleware(['checkPermissionByFunction:'.CustomPermission::getPermissionByKey('CategoryManagement')])->group(function(){
+    Route::prefix('category/{model_type}')->middleware(['checkPermissionByFunction:'.CustomPermission::getPermissionByKey('CategoryManagement')])->group(function(){
         Route::get('/', [CategoryController::class,'index'])->name('category.index');
         Route::get('/add', [CategoryController::class,'add'])->name('category.add');
         Route::post('/add', [CategoryController::class,'store'])->name('category.store');
@@ -127,8 +127,14 @@ Route::group(['middleware' => ['auth:admin']], function () {
             Route::get('/edit', [ConfigController::class,'edit'])->name('config.edit'); // Trả về form edit category
             Route::post('/edit', [ConfigController::class,'update'])->name('config.update'); // Trả về form edit category
         });
+    Route::prefix('order')->group(function(){
+        Route::get('/', [\App\Http\Controllers\OrderController::class,'index'])->name('order.index');
+        Route::get('/search', [\App\Http\Controllers\OrderController::class,'search'])->name('order.search');
+        Route::get('/edit/{id}', [\App\Http\Controllers\OrderController::class,'edit'])->name('order.edit');
+        Route::post('/edit/{id}', [\App\Http\Controllers\OrderController::class,'update'])->name('order.update');
+    });
+
 });
  Route::get('/error/404', function () {
      return view("errors.404");
  })->name('error.permission');
-

@@ -17,7 +17,7 @@
         <td >
             <div class="d-flex align-items-center justify-content-center w-100 text-center">
                 @if(in_array(\App\Models\CustomPermission::getPermissionByKey('AddACategory'), \App\Models\CustomPermission::getValidPermissions()))
-                    <div><a href="{{route("category.edit",["id"=>$item->id])}}"><i class="bx bx-edit-alt text-warning fs-3 fw-medium"></i></a></div>
+                    <div><a href="{{route("category.edit",["id"=>$item->id, 'model_type'=>$model_type])}}"><i class="bx bx-edit-alt text-warning fs-3 fw-medium"></i></a></div>
                 @endif
                 @if(in_array(\App\Models\CustomPermission::getPermissionByKey('DeleteACategory'), \App\Models\CustomPermission::getValidPermissions()))
                         <div><a href="#" data-bs-toggle="modal" data-bs-target="#delete-confirm-modal-{{$item->id}}"><i class="bx bx-trash-alt text-danger fs-3 fw-medium"></i></a></div>
@@ -26,7 +26,7 @@
 
         </td>
     </tr>
-    @include("components.modal.deleteConfirmModal",["routerName"=>"category.destroy",'item'=>$item, 'name'=>'danh mục'])
+    @include("components.modal.deleteConfirmModal",["routerName"=>"category.destroy",'item'=>$item, 'name'=>'danh mục', 'model_type'=>$model_type])
     @if($item->subCategories)
         @include('content.category.row_table', ["categories"=>$item->subCategories, "level"=>$level+1])
     @endif

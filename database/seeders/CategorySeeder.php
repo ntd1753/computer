@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -271,5 +272,11 @@ class CategorySeeder extends Seeder
                 }
             }
         }
+        $categories= Category::all();
+        foreach ($categories as $category) {
+            $category->type = Category::TYPE_PRODUCT;
+            $category->save();
+        }
+
     }
 }

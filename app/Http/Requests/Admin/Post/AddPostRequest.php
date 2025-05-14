@@ -23,7 +23,7 @@ class AddPostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:items,title',
             'slug' => 'nullable|string|max:255|unique:items,slug',
             'description' => 'nullable|string',
             'content' => 'nullable|string',

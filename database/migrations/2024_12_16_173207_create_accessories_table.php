@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('accessories', function (Blueprint $table) {
             $table->id();  // Tạo cột "id" (bigInt, auto-increment, primary key)
-            $table->foreignId('brand_id')->constrained()->onDelete('cascade');
             $table->enum('type', ['CPU', 'RAM', 'STORAGE', 'PSU', 'CASE', 'MainBoard', 'FAN', 'VGA'])
                 ->comment('Type of accessory component');  // Enum cho cột "type"
             $table->foreignId('detail_id');
