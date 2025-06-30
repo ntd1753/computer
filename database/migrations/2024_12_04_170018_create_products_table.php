@@ -25,7 +25,7 @@ return new class extends Migration
             $table->unsignedInteger('quantity')->nullable();
             // Images encoded in JSON format
             $table->json('images')->nullable(); // Assuming this will store JSON
-
+            $table->softDeletes();
             $table->unsignedBigInteger('post_id')->nullable(); // Assuming it's a foreign key
             $table->unsignedBigInteger('category_id')->nullable(); // Assuming it's a foreign key
             $table->unsignedBigInteger('detail_id')->nullable(); // Assuming it's a foreign key

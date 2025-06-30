@@ -6,9 +6,9 @@
 # DB_CONNECTION=mysql
 # DB_HOST=db
 # DB_PORT=3306
-# DB_DATABASE=wannago_db
-# DB_USERNAME=wannago_user
-# DB_PASSWORD=password1
+# DB_DATABASE=computer
+# DB_USERNAME=root
+# DB_PASSWORD=
 
 
 # Create docker network
@@ -47,4 +47,4 @@ php artisan db:seed
 
 UserName: admin  
 Password: 123456  
-Email: admin@wannago.jp
+Email: admin@gmail.com

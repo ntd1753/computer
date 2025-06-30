@@ -13,14 +13,14 @@ use App\Traits\FillDataProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 
-class PrebuiltPcController extends Controller
+class LaptopController extends Controller
 {
     use FillDataProduct;
     private function getCategories($model_type){
         return Category::where('type','=', $model_type)->whereNull('parent_id')->with('subCategories')->get();
     }
     /**
-     * Cập nhật thông tin chi tiết PC lắp sẵn.
+     * Cập nhật thông tin chi tiết
      *
      * @param LaptopAndPrebuiltPc $item
      * @param array $input
@@ -29,7 +29,7 @@ class PrebuiltPcController extends Controller
     protected function fillDataPreBuiltPCDetail(LaptopAndPrebuiltPc $item, array $input): LaptopAndPrebuiltPc
     {
         $data = [
-            'product_type'  => Arr::get($input, 'product_type', LaptopAndPrebuiltPc::TYPE_PC),
+            'product_type'  => Arr::get($input, 'product_type', LaptopAndPrebuiltPc::TYPE_LAPTOP),
             'screen_size'   => Arr::get($input, 'screen_size'),
             'cpu'           => Arr::get($input, 'cpu'),
             'ram'           => Arr::get($input, 'ram'),
@@ -37,8 +37,6 @@ class PrebuiltPcController extends Controller
             'battery_life'  => Arr::get($input, 'battery_life'),
             'vga'           => Arr::get($input, 'vga'),
             'mainboard'     => Arr::get($input, 'mainboard'),
-            'power_supply'  => Arr::get($input, 'power_supply'),
-            'cpu_fan'       => Arr::get($input, 'cpu_fan'),
             'hdd_size'      => Arr::get($input, 'hdd_size'),
             'ssd_size'      => Arr::get($input, 'ssd_size'),
             'data_sheet'    => Arr::get($input, 'dataSheet'),
@@ -64,11 +62,11 @@ class PrebuiltPcController extends Controller
     public function index(Request $request){
         $id = $request->get("id");
         $name = $request->get("name");
-        $listItem = Product::where('type',Product::TYPE_PC)
+        $listItem = Product::where('type',Product::TYPE_LAPTOP)
             ->id($id)
             ->name($name)
             ->paginate(10);
-        return view('content.prebuiltPC.index',
+        return view('content.laptop.index',
             [
                 'listItem'=>$listItem,
             ]
@@ -77,7 +75,7 @@ class PrebuiltPcController extends Controller
     public function add()
     {
 
-        return view('content.prebuiltPC.add',[
+        return view('content.laptop.add',[
             'categories' => $this->getCategories(Category::TYPE_PRODUCT),
             'brands' => Brand::all(),
         ]);
@@ -89,18 +87,18 @@ class PrebuiltPcController extends Controller
         $prebuiltPCDetail = new LaptopAndPrebuiltPc();
         $prebuiltPCDetail = $this->fillDataPreBuiltPCDetail($prebuiltPCDetail, $request->all());
         $product = new Product();
-        $product = $this->fillProduct($request->all(), $prebuiltPCDetail, $post, $product, Product::TYPE_PC);
+        $product = $this->fillProduct($request->all(), $prebuiltPCDetail, $post, $product, Product::TYPE_LAPTOP);
         $this->addImage($request, $product);
         return response()->json(['success' => true, 'message' => __('update success'),
-            'url' => route('prebuiltPc.index')]);
+            'url' => route('laptop.index')]);
     }
     public function edit($id): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
-        $prebuiltPC = Product::findOrFail($id);
-        $prebuiltPCDetail = $prebuiltPC->detail;
-        return view('content.prebuiltPC.edit', [
-            'prebuiltPC' => $prebuiltPC,
-            'prebuiltPCDetail' => $prebuiltPCDetail,
+        $laptop = Product::findOrFail($id);
+        $laptopDetail = $laptop->detail;
+        return view('content.laptop.edit', [
+            'laptop' => $laptop,
+            'laptopDetail' => $laptopDetail,
             'categories' => $this->getCategories(Category::TYPE_PRODUCT),
             'brands' => Brand::all(),
         ]);
@@ -112,16 +110,17 @@ class PrebuiltPcController extends Controller
         $post = Post::fillDataPost($request,$post, false);
         $prebuiltPCDetail = $prebuiltPC->detail;
         $prebuiltPCDetail = $this->fillDataPreBuiltPCDetail($prebuiltPCDetail, $request->all());
-        $product = $this->fillProduct($request->all(), $prebuiltPCDetail, $post, $prebuiltPC, Product::TYPE_PC);
+        $product = $this->fillProduct($request->all(), $prebuiltPCDetail, $post, $prebuiltPC, Product::TYPE_LAPTOP);
         $this->addImage($request, $product);
         return response()->json(['success' => true, 'message' => __('update success'),
-            'url' => route('prebuiltPc.index')]);
+            'url' => route('laptop.index')]);
     }
     public function destroy($id)
     {
         $prebuiltPC = Product::findOrFail($id);
         $prebuiltPC->delete();
 
-        return redirect()->route('prebuiltPc.index');
+        return redirect()->route('laptop.index');
     }
+
 }

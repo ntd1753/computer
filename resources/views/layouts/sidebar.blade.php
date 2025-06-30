@@ -10,7 +10,7 @@
                 <li class="menu-title" key="t-menu">{{__('label.menu')}}</li>
 
                 <li>
-                    <a href="javascript: void(0);" class="waves-effect">
+                    <a href="{{route('index')}}" class="waves-effect">
                         <i class="bx bx-home-circle"></i>
                         <span key="t-dashboards">{{__('label.dashboard')}}</span>
                     </a>
@@ -18,7 +18,8 @@
                 @if(in_array(\App\Models\CustomPermission::getPermissionByKey('UserRoleAndPermissionList'), \App\Models\CustomPermission::getValidPermissions()))
                     <li>
                         <a href="{{route('role.index')}}" key="t-level-1-1">
-                            <i class="bx bx-lock-alt"></i>Vai trò người dùng
+                            <i class="bx bx-lock-alt"></i>
+                            <span key="t-dashboards">Vai trò người dùng </span>
                         </a>
                     </li>
                 @endif
@@ -50,7 +51,6 @@
                         </a>
                     </li>
                 @endif
-
                 @if(in_array(\App\Models\CustomPermission::getPermissionByKey('CategoryManagement'), \App\Models\CustomPermission::getValidPermissions()))
                     <li>
                         <a href="#" class="has-arrow waves-effect">
@@ -93,8 +93,8 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{route('pc.index')}}" key="t-level-1-1">
-                                    <i class="bx bx-desktop"></i>PC tùy chỉnh
+                                <a href="{{route('laptop.index')}}" key="t-level-1-1">
+                                    <i class="bx bx-desktop"></i>Laptop
                                 </a>
                             </li>
                             <li>
@@ -114,7 +114,24 @@
                         </a>
                     </li>
                 @endif
-                @if(in_array(\App\Models\CustomPermission::getPermissionByKey('BannerManagement'), \App\Models\CustomPermission::getValidPermissions()))
+                @if(in_array(\App\Models\CustomPermission::getPermissionByKey('OrderManagement'), \App\Models\CustomPermission::getValidPermissions()))
+                    <li>
+                        <a href="{{route('order.index')}}" class="waves-effect">
+                            <i class="bx bx-cart-alt"></i>
+                            <span key="t-dashboards">Quản lí Đơn hàng</span>
+                        </a>
+                    </li>
+                @endif
+                @if(in_array(\App\Models\CustomPermission::getPermissionByKey('ReviewManagement'), \App\Models\CustomPermission::getValidPermissions()))
+                    <li>
+                        <a href="{{route('review.index')}}" class="waves-effect">
+                            <i class="bx bx-star"></i>
+                            <span key="t-dashboards">Quản lí Đánh giá sản phẩm</span>
+                        </a>
+                    </li>
+                @endif
+
+            @if(in_array(\App\Models\CustomPermission::getPermissionByKey('BannerManagement'), \App\Models\CustomPermission::getValidPermissions()))
                     <li>
                         <a href="{{route('banner.index')}}" class="waves-effect">
                             <i class="bx bx-image-add"></i>
@@ -130,14 +147,15 @@
                         </a>
                     </li>
                 @endif
-                @if(in_array(\App\Models\CustomPermission::getPermissionByKey('OrderManagement'), \App\Models\CustomPermission::getValidPermissions()))
-                <li>
-                    <a href="{{route('order.index')}}" class="waves-effect">
-                        <i class="bx bx-image-add"></i>
-                        <span key="t-dashboards">Quản lí Đơn hàng</span>
-                    </a>
-                </li>
+                @if(in_array(\App\Models\CustomPermission::getPermissionByKey('FilterManagement'), \App\Models\CustomPermission::getValidPermissions()))
+                    <li>
+                        <a href="{{route('filters.index')}}" class="waves-effect">
+                            <i class="bx bx-cog"></i>
+                            <span key="t-dashboards">Quản lí bộ lọc</span>
+                        </a>
+                    </li>
                 @endif
+
             </ul>
         </div>
         <!-- Sidebar -->

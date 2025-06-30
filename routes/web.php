@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ConfigController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FilterController;
+use App\Http\Controllers\Admin\LaptopController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\PcController;
 use App\Http\Controllers\Admin\PostController;
@@ -35,6 +37,7 @@ Route::post('/login', [LoginController::class,'login'])->name('login');
 Route::post('/logout', [LoginController::class,'logout'])->name('logout');
 Route::group(['middleware' => ['auth:admin']], function () {
     Route::get('/dashboard',[DashboardController::class,'index'])->name('index');
+    Route::get('/getRevenueByMonth', [DashboardController::class, 'getRevenueByMonth'])->name('getRevenueByMonth');
 
     Route::prefix('brand')->middleware(['checkPermissionByFunction:'.CustomPermission::getPermissionByKey('BrandManagement')])->group(function() {
         Route::get('/',[BrandController::class,'index'])->name("brand.index"); // danh sách
@@ -61,14 +64,6 @@ Route::group(['middleware' => ['auth:admin']], function () {
             Route::post('/edit/{id}', [AccessoryController::class,'update'])->name('accessory.update');
             Route::get('/delete/{id}', [AccessoryController::class,'destroy'])->name('accessory.destroy');
         });
-        Route::group(['prefix'=>'pc'],function() {
-            Route::get('/',[PcController::class,'index'])->name("pc.index");
-            Route::get('/add', [PcController::class,'add'])->name('pc.add');
-            Route::post('/add', [PcController::class,'store'])->name('pc.store');
-            Route::get('/edit/{id}', [PcController::class,'edit'])->name('pc.edit');
-            Route::post('/edit/{id}', [PcController::class,'update'])->name('pc.update');
-            Route::get('/delete/{id}', [PcController::class,'destroy'])->name('pc.destroy');
-        });
         Route::group(['prefix'=>'prebuilt-pc'],function() {
             Route::get('/',[PrebuiltPcController::class,'index'])->name("prebuiltPc.index");
             Route::get('/add', [PrebuiltPcController::class,'add'])->name('prebuiltPc.add');
@@ -76,6 +71,14 @@ Route::group(['middleware' => ['auth:admin']], function () {
             Route::get('/edit/{id}', [PrebuiltPcController::class,'edit'])->name('prebuiltPc.edit');
             Route::post('/edit/{id}', [PrebuiltPcController::class,'update'])->name('prebuiltPc.update');
             Route::get('/delete/{id}', [PrebuiltPcController::class,'destroy'])->name('prebuiltPc.destroy');
+        });
+        Route::group(['prefix'=>'laptop'],function() {
+            Route::get('/',[LaptopController::class,'index'])->name("laptop.index");
+            Route::get('/add', [LaptopController::class,'add'])->name('laptop.add');
+            Route::post('/add', [LaptopController::class,'store'])->name('laptop.store');
+            Route::get('/edit/{id}', [LaptopController::class,'edit'])->name('laptop.edit');
+            Route::post('/edit/{id}', [LaptopController::class,'update'])->name('laptop.update');
+            Route::get('/delete/{id}', [LaptopController::class,'destroy'])->name('laptop.destroy');
         });
     });
 
@@ -127,11 +130,33 @@ Route::group(['middleware' => ['auth:admin']], function () {
             Route::get('/edit', [ConfigController::class,'edit'])->name('config.edit'); // Trả về form edit category
             Route::post('/edit', [ConfigController::class,'update'])->name('config.update'); // Trả về form edit category
         });
-    Route::prefix('order')->group(function(){
+    Route::prefix('order')->middleware(['checkPermissionByFunction:'.CustomPermission::getPermissionByKey('OrderManagement')])
+        ->group(function(){
         Route::get('/', [\App\Http\Controllers\OrderController::class,'index'])->name('order.index');
         Route::get('/search', [\App\Http\Controllers\OrderController::class,'search'])->name('order.search');
-        Route::get('/edit/{id}', [\App\Http\Controllers\OrderController::class,'edit'])->name('order.edit');
+        Route::get('/edit/{id}', [\App\Http\Controllers\OrderController::class,'edit'])->middleware(['checkPermissionByFunction:'.CustomPermission::getPermissionByKey('EditAnOrder')])->name('order.edit');
         Route::post('/edit/{id}', [\App\Http\Controllers\OrderController::class,'update'])->name('order.update');
+    });
+    Route::prefix('review')->middleware(['checkPermissionByFunction:'.CustomPermission::getPermissionByKey('ReviewManagement')])
+        ->group(function(){
+            Route::get('/', [\App\Http\Controllers\Admin\ReviewController::class,'index'])->name('review.index');
+            Route::get('/search', [\App\Http\Controllers\Admin\ReviewController::class,'index'])->name('review.search');
+            Route::get('/edit/{id}', [\App\Http\Controllers\Admin\ReviewController::class,'edit'])
+                ->middleware(['checkPermissionByFunction:'.CustomPermission::getPermissionByKey('EditAReview')])
+                ->name('review.edit');
+            Route::post('/edit/{id}', [\App\Http\Controllers\Admin\ReviewController::class,'update'])
+                ->middleware(['checkPermissionByFunction:'.CustomPermission::getPermissionByKey('EditAReview')])
+                ->name('review.update');
+        });
+   Route::prefix('filters')->middleware(['checkPermissionByFunction:'.CustomPermission::getPermissionByKey('FilterManagement')])
+       ->group(function () {
+        Route::get('/', [FilterController::class, 'index'])->name('filters.index');
+        Route::get('/{id}/edit', [FilterController::class, 'edit'])
+            ->middleware(['checkPermissionByFunction:'.CustomPermission::getPermissionByKey('EditFilter')])
+            ->name('filters.edit');
+        Route::post('/{id}', [FilterController::class, 'update'])
+            ->middleware(['checkPermissionByFunction:'.CustomPermission::getPermissionByKey('EditFilter')])
+            ->name('filters.update');
     });
 
 });

@@ -74,65 +74,64 @@
             Quản Lí Sản Phẩm
         @endslot
         @slot('title')
-            Sửa thông tin Sản Phẩm
+            Thêm Sản Phẩm
         @endslot
     @endcomponent
-    <form action="{{route('accessory.update',['accessory_type'=>$accessoryType, 'id' => $accessory->id])}}" method="POST" enctype="multipart/form-data" class="frm_form_add">
-        @csrf
+    <form action="{{route('laptop.update',['id'=>$laptop->id])}}" method="POST" enctype="multipart/form-data" class="frm_form_add">
+    @csrf
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
                         <h4 class="card-title">Thông tin cơ bản</h4>
 
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label for="name">Tên Sản Phẩm</label>
-                                    <input id="name" name="name" type="text" class="form-control" value="{{$accessory->product->name}}"
+                                    <input id="name" name="name" type="text" class="form-control" value="{{$laptop->name}}"
                                     >
                                 </div>
                                 <div class="mb-3">
                                     <label for="slug">Loại Sản Phẩm</label>
                                     <input id="slug" type="text"
-                                           class="form-control" value="{{strtoupper($accessoryType)}}"
+                                           class="form-control" value="{{strtoupper($laptop->type)}}"
                                            disabled>
                                     <input type="hidden" name="product_type"
-                                           class="form-control" value="{{strtoupper($accessoryType)}}">
+                                           class="form-control" value="{{strtoupper($laptop->type)}}">
                                 </div>
                                 <div class="mb-3">
                                     <label for="cost">Giá nhập</label>
-                                    <input id="cost" name="cost" type="text" value="{{$accessory->product->cost}}"
+                                    <input id="cost" name="cost" type="text" value="{{$laptop->cost}}"
                                            class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label for="discount-type">Loại Giảm giá</label>
                                     <select id="discount-type" class="form-control" name="discount_type"
-                                    @if(!$accessory->product->discount_type)
-                                        disabled
-                                    @endif
+                                            @if(!$laptop->discount_type)
+                                                disabled
+                                        @endif
                                     >
                                         <option value=""
-                                            @if(!$accessory->product->discount_type)
-                                            selected
-                                            @endif>Chọn Loại Giảm giá</option>
-                                        <option value="1"
-                                                @if($accessory->product->discount_type == \App\Models\Product::DISCOUNT_PERCENT)
+                                                @if(!$laptop->discount_type)
                                                     selected
-                                               @endif>
+                                            @endif>Chọn Loại Giảm giá</option>
+                                        <option value="{{\App\Models\Product::DISCOUNT_PERCENT}}"
+                                                @if($laptop->discount_type == \App\Models\Product::DISCOUNT_PERCENT)
+                                                    selected
+                                            @endif>
                                             Giảm Phần Trăm
-                                         </option>
-                                        <option value="0"
-                                                @if($accessory->product->discount_type == \App\Models\Product::DISCOUNT_VND)
+                                        </option>
+                                        <option value="{{\App\Models\Product::DISCOUNT_VND}}"
+                                                @if($laptop->discount_type == \App\Models\Product::DISCOUNT_VND)
                                                     selected
                                             @endif>
                                             Giảm Giá Trực Tiếp</option>
                                     </select>
                                 </div>
-                                <div class="mb-3 col-sm-6">
+                                <div class="mb-3">
                                     <label for="quantity">Số lượng</label>
-                                    <input id="quantity" name="quantity" type="number" class="form-control" value="{{$accessory->product->quantity}}">
+                                    <input id="quantity" name="quantity" type="number" class="form-control" value="{{$laptop->quantity}}">
                                 </div>
                             </div>
 
@@ -144,7 +143,7 @@
 
                                         <option>Chọn Danh Mục</option>
                                         @include('content.accessory.category_selected_option',
-                                            ['item'=>$accessory->product,
+                                            ['item'=>$laptop,
                                             "categories" =>$categories,
                                             'level' => 0])
                                     </select>
@@ -154,27 +153,27 @@
 
                                     <select class="form-control select2" name="brand_id"
                                     >
-                                        <option>Chọn Nhãn Hàng</option>
+                                        <option value="">Chọn Nhãn Hàng</option>
                                         @foreach($brands as $brand)
-                                            @if($accessory->product->brand_id == $brand->id)
+                                            @if($laptop->brand_id == $brand->id)
                                                 <option value="{{$brand->id}}" selected>{{$brand->name}}</option>
                                             @endif
-                                                <option value="{{$brand->id}}">{{$brand->name}}</option>
+                                            <option value="{{$brand->id}}">{{$brand->name}}</option>
 
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="price">Giá Bán</label>
-                                    <input id="price" name="price" type="text" class="form-control" value="{{$accessory->product->price}}"
+                                    <input id="price" name="price" type="text" class="form-control" value="{{$laptop->price}}"
                                            placeholder="Price">
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-10">
                                         <label for="discount-value">Giảm Giá</label>
                                         <input id="discount-value" name="discount_value" type="text"
-                                               class="form-control" value="{{$accessory->product->discount_value??""}}"
-                                               @if(!$accessory->product->discount_type)
+                                               class="form-control" value="{{$laptop->discount_value??""}}"
+                                               @if(!$laptop->discount_type)
                                                    disabled
                                             @endif
                                         >
@@ -183,25 +182,35 @@
                                     <div class="col-2 d-flex align-items-end">
                                         <div class="form-check form-switch form-switch-lg mb-2" dir="ltr">
                                             <input class="form-check-input" type="checkbox" id="discount-checkbox"
-                                                    @if($accessory->product->discount_type)
-                                                    checked
-                                                    @endif
+                                                   @if($laptop->discount_type)
+                                                       checked
+                                                @endif
                                             >
                                             <label class="form-check-label" for="discount-checkbox"></label>
                                         </div></div>
                                 </div>
-
+                                <div class="mb-3">
+                                    <label for="quantity">Sản phẩm Nổi bật</label>
+                                    <select class="form-control select2" name="is_bestseller">
+                                        @foreach(\App\Models\Product::$listSuggest as $key=>$value)
+                                            @if($laptop->is_bestseller == $key)
+                                                <option value="{{$key}}" selected>{{$value}}</option>
+                                            @else
+                                                <option value="{{$key}}">{{$value}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Thông Số</h4>
-                        @include('components.product.'.$accessoryType, ["item" => $accessory->detail])
+                        <h4 class="card-title">Thông số sản phẩm</h4>
+                        @include('components.product.prebuiltPC', ['item' => $laptopDetail])
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-body row">
                         <div class="col-8">
@@ -211,7 +220,7 @@
                                     <div class="gallery_container">
                                         <div id = "image_container" class="image_container property_gallery">
                                             @php
-                                                $previewImgs = json_decode($accessory->product->images, true);
+                                                $previewImgs = json_decode($laptop->images, true);
                                             @endphp
                                             @foreach($previewImgs as $image)
                                                 <div class="image_box">
@@ -240,7 +249,12 @@
                             <h4 class="card-title mb-3">Data Sheet</h4>
 
                             <textarea id="dataSheet" name="dataSheet">
-                            {!! $accessory->data_sheet !!}
+                                @if($laptopDetail->data_sheet)
+                                    {!! $laptopDetail->data_sheet !!}
+                                @else
+                                    @include('components.product.dataSheet')
+                                @endif
+
                         </textarea>
                         </div>
                     </div>
@@ -248,7 +262,7 @@
                 </div> <!-- end card-->
 
                 <div class="card">
-                    @include("components.product.post",['item'=>$accessory->product->post])
+                    @include("components.product.post",['item'=>$laptop->post])
                 </div>
             </div>
         </div>
@@ -257,7 +271,7 @@
                 <button type="submit" class="btn btn-primary waves-effect waves-light">Lưu</button>
             </div>
         </div>
-        <!-- end row -->
+    <!-- end row -->
     </form>
 
 @endsection
@@ -266,7 +280,6 @@
     <script src="{{ URL::asset('build/libs/select2/js/select2.min.js') }}"></script>
 
     <!-- dropzone plugin -->
-    <script src="{{ URL::asset('build/libs/dropzone/dropzone-min.js') }}"></script>
 
     <!-- init js -->
     <script src="{{ URL::asset('build/js/pages/ecommerce-select2.init.js') }}"></script>
@@ -315,7 +328,7 @@
                                 location.href = res.url;
                             }, 1000);
                         } else {
-                            // showErrorMessage(res.message);
+                           // showErrorMessage(res.message);
                         }
                     },
                     error: function (e) {
@@ -324,7 +337,8 @@
                 });
             });
         });
-
+        var inputId='';
+        var countInputId=0;
     </script>
     <script type="text/javascript" language="JavaScript">
         $(document).ready(function () {
@@ -383,5 +397,4 @@
         }
 
     </script>
-
 @endsection

@@ -284,6 +284,38 @@ class PermissionSeeder extends Seeder
                 'system_name_parent' => 'BannerManagement',
                 'guard_name' => 'admin',
             ],
+            // Quản lí đánh giá và bình luận sản phẩm
+            [
+                'system_name' => 'ReviewManagement',
+                'name' => 'Quản lí đánh giá và bình luận sản phẩm',
+                'system_name_parent' => null,
+                'guard_name' => 'admin',
+            ],
+            [
+                'system_name' => 'EditAReview',
+                'name' => 'Chỉnh sửa đánh giá',
+                'system_name_parent' => 'ReviewManagement',
+                'guard_name' => 'admin',
+            ],
+            [
+                'system_name' => 'DeleteAReview',
+                'name' => 'Xóa đánh giá',
+                'system_name_parent' => 'ReviewManagement',
+                'guard_name' => 'admin',
+            ],
+            //Quản lí bộ lọc
+            [
+                'system_name' => 'FilterManagement',
+                'name' => 'Quản lí bộ lọc',
+                'system_name_parent' => null,
+                'guard_name' => 'admin',
+            ],
+            [
+                'system_name' => 'EditFilter',
+                'name' => 'Chỉnh sửa bộ lọc',
+                'system_name_parent' => 'FilterManagement',
+                'guard_name' => 'admin',
+            ],
         ];
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('role_has_permissions')->truncate();

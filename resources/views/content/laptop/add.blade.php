@@ -74,134 +74,25 @@
             Quản Lí Sản Phẩm
         @endslot
         @slot('title')
-            Sửa thông tin Sản Phẩm
+            Thêm Sản Phẩm
         @endslot
     @endcomponent
-    <form action="{{route('accessory.update',['accessory_type'=>$accessoryType, 'id' => $accessory->id])}}" method="POST" enctype="multipart/form-data" class="frm_form_add">
-        @csrf
+    <form action="{{route('laptop.store')}}" method="POST" enctype="multipart/form-data" class="frm_form_add">
+    @csrf
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
                         <h4 class="card-title">Thông tin cơ bản</h4>
-
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="mb-3">
-                                    <label for="name">Tên Sản Phẩm</label>
-                                    <input id="name" name="name" type="text" class="form-control" value="{{$accessory->product->name}}"
-                                    >
-                                </div>
-                                <div class="mb-3">
-                                    <label for="slug">Loại Sản Phẩm</label>
-                                    <input id="slug" type="text"
-                                           class="form-control" value="{{strtoupper($accessoryType)}}"
-                                           disabled>
-                                    <input type="hidden" name="product_type"
-                                           class="form-control" value="{{strtoupper($accessoryType)}}">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="cost">Giá nhập</label>
-                                    <input id="cost" name="cost" type="text" value="{{$accessory->product->cost}}"
-                                           class="form-control">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="discount-type">Loại Giảm giá</label>
-                                    <select id="discount-type" class="form-control" name="discount_type"
-                                    @if(!$accessory->product->discount_type)
-                                        disabled
-                                    @endif
-                                    >
-                                        <option value=""
-                                            @if(!$accessory->product->discount_type)
-                                            selected
-                                            @endif>Chọn Loại Giảm giá</option>
-                                        <option value="1"
-                                                @if($accessory->product->discount_type == \App\Models\Product::DISCOUNT_PERCENT)
-                                                    selected
-                                               @endif>
-                                            Giảm Phần Trăm
-                                         </option>
-                                        <option value="0"
-                                                @if($accessory->product->discount_type == \App\Models\Product::DISCOUNT_VND)
-                                                    selected
-                                            @endif>
-                                            Giảm Giá Trực Tiếp</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3 col-sm-6">
-                                    <label for="quantity">Số lượng</label>
-                                    <input id="quantity" name="quantity" type="number" class="form-control" value="{{$accessory->product->quantity}}">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="mb-3">
-                                    <label class="control-label">Danh Mục</label>
-
-                                    <select class="form-control select2" name="category_id">
-
-                                        <option>Chọn Danh Mục</option>
-                                        @include('content.accessory.category_selected_option',
-                                            ['item'=>$accessory->product,
-                                            "categories" =>$categories,
-                                            'level' => 0])
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="control-label">Nhãn Hàng</label>
-
-                                    <select class="form-control select2" name="brand_id"
-                                    >
-                                        <option>Chọn Nhãn Hàng</option>
-                                        @foreach($brands as $brand)
-                                            @if($accessory->product->brand_id == $brand->id)
-                                                <option value="{{$brand->id}}" selected>{{$brand->name}}</option>
-                                            @endif
-                                                <option value="{{$brand->id}}">{{$brand->name}}</option>
-
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="price">Giá Bán</label>
-                                    <input id="price" name="price" type="text" class="form-control" value="{{$accessory->product->price}}"
-                                           placeholder="Price">
-                                </div>
-                                <div class="mb-3 row">
-                                    <div class="col-10">
-                                        <label for="discount-value">Giảm Giá</label>
-                                        <input id="discount-value" name="discount_value" type="text"
-                                               class="form-control" value="{{$accessory->product->discount_value??""}}"
-                                               @if(!$accessory->product->discount_type)
-                                                   disabled
-                                            @endif
-                                        >
-                                    </div>
-
-                                    <div class="col-2 d-flex align-items-end">
-                                        <div class="form-check form-switch form-switch-lg mb-2" dir="ltr">
-                                            <input class="form-check-input" type="checkbox" id="discount-checkbox"
-                                                    @if($accessory->product->discount_type)
-                                                    checked
-                                                    @endif
-                                            >
-                                            <label class="form-check-label" for="discount-checkbox"></label>
-                                        </div></div>
-                                </div>
-
-                            </div>
-                        </div>
+                        @include('components.product.basicInformation',['accessoryType'=>"PC"])
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Thông Số</h4>
-                        @include('components.product.'.$accessoryType, ["item" => $accessory->detail])
+                        <h4 class="card-title">Thông số sản phẩm</h4>
+                        @include('components.product.prebuiltPC')
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-body row">
                         <div class="col-8">
@@ -210,18 +101,7 @@
                                 <div class="col-8">
                                     <div class="gallery_container">
                                         <div id = "image_container" class="image_container property_gallery">
-                                            @php
-                                                $previewImgs = json_decode($accessory->product->images, true);
-                                            @endphp
-                                            @foreach($previewImgs as $image)
-                                                <div class="image_box">
-                                                    <img src="{{$image}}">
-                                                    <button type="button" class="btn btn-warning btn_delete_image">
-                                                        <i class="fa fa-trash"></i>
-                                                    </button>
-                                                    <input type="hidden" name="images[]" value="{{$image}}">
-                                                </div>
-                                            @endforeach
+
                                         </div>
                                         <div class="add_image_button" data-preview="property_gallery" data-type="images">
                                             <i class="fa fa-image"></i>
@@ -234,13 +114,12 @@
 
                                 </div>
                             </div>
-
                         </div>
                         <div class="col-4">
                             <h4 class="card-title mb-3">Data Sheet</h4>
 
                             <textarea id="dataSheet" name="dataSheet">
-                            {!! $accessory->data_sheet !!}
+                            @include('components.product.dataSheet')
                         </textarea>
                         </div>
                     </div>
@@ -248,7 +127,7 @@
                 </div> <!-- end card-->
 
                 <div class="card">
-                    @include("components.product.post",['item'=>$accessory->product->post])
+                    @include("components.product.post")
                 </div>
             </div>
         </div>
@@ -257,7 +136,7 @@
                 <button type="submit" class="btn btn-primary waves-effect waves-light">Lưu</button>
             </div>
         </div>
-        <!-- end row -->
+    <!-- end row -->
     </form>
 
 @endsection
@@ -266,7 +145,6 @@
     <script src="{{ URL::asset('build/libs/select2/js/select2.min.js') }}"></script>
 
     <!-- dropzone plugin -->
-    <script src="{{ URL::asset('build/libs/dropzone/dropzone-min.js') }}"></script>
 
     <!-- init js -->
     <script src="{{ URL::asset('build/js/pages/ecommerce-select2.init.js') }}"></script>
@@ -315,7 +193,7 @@
                                 location.href = res.url;
                             }, 1000);
                         } else {
-                            // showErrorMessage(res.message);
+                           // showErrorMessage(res.message);
                         }
                     },
                     error: function (e) {
@@ -324,7 +202,8 @@
                 });
             });
         });
-
+        var inputId='';
+        var countInputId=0;
     </script>
     <script type="text/javascript" language="JavaScript">
         $(document).ready(function () {
@@ -383,5 +262,4 @@
         }
 
     </script>
-
 @endsection

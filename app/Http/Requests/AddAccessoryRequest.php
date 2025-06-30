@@ -31,6 +31,7 @@ class AddAccessoryRequest extends FormRequest
             'category_id' => 'required|not_in:Chọn Danh Mục',
             'brand_id' => 'required|not_in:Chọn Nhãn Hàng',
             'images' => 'required|array|min:1',
+            'quantity' => 'required|integer|min:1',
         ];
 
         $productType = $this->input('product_type'); // Xác định loại sản phẩm

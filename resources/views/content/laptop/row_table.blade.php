@@ -46,12 +46,12 @@
             <div class="d-flex align-items-center justify-content-center w-100 text-center">
                 <div><a href="#" data-bs-toggle="modal" data-bs-target="#post-product-modal-{{$item->id}}"><i class="bx bx-food-menu fs-3 fw-medium text-primary"></i></a></div>
                 <div><a href="#" data-bs-toggle="modal" data-bs-target="#data-sheet-product-modal-{{$item->id}}"><i class="bx bx-spreadsheet fs-3 fw-medium text-primary"></i></a></div>
-                <div><a href="{{route('prebuiltPc.edit',["id"=>$item->id])}}"><i class="bx bx-edit-alt text-warning fs-3 fw-medium"></i></a></div>
+                <div><a href="{{route('laptop.edit',["id"=>$item->id])}}"><i class="bx bx-edit-alt text-warning fs-3 fw-medium"></i></a></div>
                 <div><a href="#" data-bs-toggle="modal" data-bs-target="#delete-confirm-modal-{{$item->id}}"><i class="bx bx-trash-alt text-danger fs-3 fw-medium"></i></a></div>
             </div>
 
         </td>
     </tr>
-    @include("components.modal.deleteConfirmModal",["routerName"=>"prebuiltPc.destroy",'item'=>$item, 'name'=>'sản phẩm', "accessory_type"=>null])
+    @include("components.modal.deleteConfirmModal",["routerName"=>"laptop.destroy",'item'=>$item, 'name'=>'sản phẩm', "accessory_type"=>null])
 
 @endforeach

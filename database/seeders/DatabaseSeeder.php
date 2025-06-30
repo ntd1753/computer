@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LaptopAndPrebuiltPCSeeder::class);
         $this->call(PaymentMethodSeeder::class);
         $this->call(FilterSeeder::class);
+        $this->call(OrdersTableSeeder::class);
+        $this->call(OrderItemsTableSeeder::class);
     }
 }

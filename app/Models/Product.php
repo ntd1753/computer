@@ -5,10 +5,11 @@ namespace App\Models;
 use Database\Seeders\LaptopAndPrebuiltPCSeeder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
     protected $table = 'products';
     protected $fillable = [
         'name', 'slug', 'type', 'cost', 'price', 'discount_type', 'discount_value',
@@ -32,7 +33,15 @@ class Product extends Model
         self::DISCOUNT_PERCENT => 'Phần Trăm',
         self::DISCOUNT_VND => 'VNĐ',
     ];
+    const NORMAL = 0;
+    const FEATURED = 1;
+    public static $listSuggest = [
+        self::NORMAL => 'Sản phẩm thường',
+        self::FEATURED => 'Nổi bật',
+    ];
     // A product belongs to a post
+
+
     public function post()
     {
         return $this->belongsTo(Post::class);

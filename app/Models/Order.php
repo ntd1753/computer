@@ -33,6 +33,7 @@ class Order extends Model
         self::ORDER_STATUS_COMPLETED => 'bg-success', // Green
         self::ORDER_STATUS_CANCELLED => 'bg-[#FF4500]', // Orange
         self::ORDER_STATUS_FAILED => 'bg-danger', // Red
+        self::PAYMENT_STATUS_COD => 'bg-warning',
     ];
 
     public static $listOrderStatus = [
@@ -48,13 +49,11 @@ class Order extends Model
     const PAYMENT_STATUS_FAILED = 'FAILED';
     const PAYMENT_STATUS_PENDING = 'PENDING';
     const PAYMENT_STATUS_COD = 'COD';
-    const PAYMENT_STATUS_REFUNDED = 'REFUNDED';
     public static $listPaymentStatus = [
         self::PAYMENT_STATUS_PENDING => 'Chờ thanh toán',
         self::PAYMENT_STATUS_COMPLETED => 'Đã thanh toán',
         self::PAYMENT_STATUS_FAILED => 'Thanh toán thất bại',
         self::PAYMENT_STATUS_COD => 'Thanh toán khi nhận hàng',
-        self::PAYMENT_STATUS_REFUNDED => 'Đã hoàn tiền',
     ];
     public function orderItems()
     {

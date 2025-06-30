@@ -13,7 +13,7 @@
         @endslot
     @endcomponent
     <div class="card p-3">
-        <form class="mt-4" method="GET" action="{{route('prebuiltPc.index')}}">
+        <form class="mt-4" method="GET" action="{{route('laptop.index')}}">
             <div class="row">
                 <div class="col-lg-6 col-sm-6">
                     <div class="mb-0">
@@ -53,7 +53,7 @@
     </div>
 
     <div>
-        <a href="{{route('prebuiltPc.add')}}">
+        <a href="{{route('laptop.add')}}">
             <button type="button" class="btn btn-primary waves-effect waves-light my-3"><i class="bx bx-plus"></i>Thêm Sản Phẩm</button>
         </a>
     </div>
@@ -74,7 +74,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @include('content.preBuiltPC.row_table',['listItem'=>$listItem])
+                            @include('content.laptop.row_table',['listItem'=>$listItem])
                         </tbody>
                     </table>
                 </div>
