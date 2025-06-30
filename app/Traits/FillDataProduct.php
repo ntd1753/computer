@@ -6,6 +6,7 @@ use App\Models\LaptopAndPrebuiltPc;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use App\Models\Product;
+use OpenAI\Laravel\Facades\OpenAI;
 
 trait FillDataProduct
 {
@@ -24,6 +25,14 @@ trait FillDataProduct
         $product->post_id = $post->id;
         $product->quantity = $input['quantity'] ?? 1;
         $product->is_bestseller = Arr::get($input, 'is_bestseller', 0);
+        $text = "{$product->name}, loại: {$product->type}, giá: {$product->price} VND";
+
+        $embedding = OpenAI::embeddings()->create([
+            'model' => 'text-embedding-3-small',
+            'input' => $text,
+        ])['data'][0]['embedding'];
+
+        $product->embedding = $embedding;
         $product->save();
 
         return $product;

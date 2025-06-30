@@ -84,13 +84,13 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Thông tin cơ bản</h4>
-                        @include('components.product.basicInformation',['accessoryType'=>"PC"])
+                        @include('components.product.basicInformation',['accessoryType'=>\App\Models\Product::TYPE_LAPTOP])
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Thông số sản phẩm</h4>
-                        @include('components.product.prebuiltPC')
+                        @include('components.product.laptop')
                     </div>
                 </div>
                 <div class="card">

@@ -78,7 +78,7 @@
         </div>
         <div class="mb-3 col-sm-6">
             <label for="quantity">Sản phẩm Nổi bật</label>
-            <select class="form-control select2" name="brand_id">
+            <select class="form-control select2" name="is_bestseller">
                 @foreach(\App\Models\Product::$listSuggest as $key=>$value)
                     <option value="{{$key}}">{{$value}}</option>
                 @endforeach

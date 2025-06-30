@@ -126,7 +126,8 @@
                                                 @if($laptop->discount_type == \App\Models\Product::DISCOUNT_VND)
                                                     selected
                                             @endif>
-                                            Giảm Giá Trực Tiếp</option>
+                                            Giảm Giá Trực Tiếp
+                                        </option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
@@ -208,7 +209,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Thông số sản phẩm</h4>
-                        @include('components.product.prebuiltPC', ['item' => $laptopDetail])
+                        @include('components.product.laptop', ['item' => $laptopDetail])
                     </div>
                 </div>
                 <div class="card">
