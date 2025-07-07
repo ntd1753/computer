@@ -15,9 +15,9 @@
         <td>{{$item->position}}</td>
         <td>
             <div class="d-flex justify-content-center">
-                <a href="{{route('banner.edit', $item->id)}}" >
-                    <i class="bx bx-edit-alt text-warning fs-3 fw-medium"></i>
-                </a>
+{{--                <a href="{{route('banner.edit', $item->id)}}" >--}}
+{{--                    <i class="bx bx-edit-alt text-warning fs-3 fw-medium"></i>--}}
+{{--                </a>--}}
                 <a type="button" data-bs-toggle="modal" data-bs-target="#delete-confirm-modal-{{$item->id}}">
                     <i class="bx bx-trash-alt text-danger fs-3 fw-medium"></i>
                 </a>

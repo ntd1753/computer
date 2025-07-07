@@ -1,0 +1,520 @@
+[
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 7 9800X3D \/ 4.7GHz Boost 5.2GHz \/ 8 nhân 16 luồng \/ 104MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/242872903-d_ryzen_7_9800x3d_3dpib_fl_2b5b9679b1b14fd2a89511a1dfd4511b.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/242872903-e_ryzen_7_9800x3d_3dpib_f_7252995ffaab49a99cf34b85b2874674.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/242872903-f_ryzen_7_9800x3d_3dpib_fr_91df39d341ab49d5bed383a80579a5ab.png\"]",
+        "tags": {
+            "socket": "AM5",
+            "core_type": "AMD 9000 Series",
+            "core_series": "Ryzen 7"
+        },
+        "cost": 1499000000,
+        "price": 1499000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 8400F \/ 4.2GHz Boost 4.7GHz \/ 6 nhân 12 luồng \/ 22MB \/ AM5 (TRAY)",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/08523-amd-ryzen-8000-series-pr_5_b7eb435b4329479ab5f9e78562119a5c.png\"]",
+        "tags": {
+            "socket": "AM5",
+            "core_type": "AMD 8000 Series",
+            "core_series": "Ryzen 5"
+        },
+        "cost": 429000000,
+        "price": 499000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 7 8700F \/ 4.1GHz Boost 5.0GHz \/ 8 nhân 16 luồng \/ 24MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/cpu-amd-ryzen-7-8700g-up-to-5-1g_45a4b7f106074215a705e6617a093ad3.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/2608523-amd-ryzen-8000-series-pr_a9cc5f52e6a94f23b7708a48cadc518d.png\"]",
+        "tags": {
+            "socket": "AMD AM5",
+            "core_series": "AMD Ryzen 7",
+            "core_type": "AMD 8000 series"
+        },
+        "cost": 689000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 8400F \/ 4.2GHz Boost 4.7GHz \/ 6 nhân 12 luồng \/ 22MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/100-100001591box-1_42bbe74b631c4722b63db81c9914a7e4.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/2608523-amd-ryzen-8000-series-pr_5b9a10178df04d8abdc91b9d7e059f05.png\"]",
+        "tags": {
+            "core_series": "AMD Ryzen 5",
+            "socket": "AMD AM5",
+            "core_type": "AMD 8000 series"
+        },
+        "cost": 449000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 5500GT \/ 3.6GHz Boost 4.4GHz \/ 6 nhân 12 luồng \/ 19MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/a_amdryzen5_wgraphics_3dpib_righ_c2564b6e8ec647b1827237adaf34ba4d.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/-a_amdryzen5_wgraphics_3dpib_lef_925b970128324c639c10814e74ae4596.png\"]",
+        "tags": {
+            "core_series": "Ryzen 5",
+            "core_type": "AMD 5000 Series",
+            "socket": "AM4"
+        },
+        "cost": 309000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 5600GT \/ 3.6GHz Boost 4.6GHz \/ 6 nhân 12 luồng \/ 19MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/u-ly-amd-ryzen-5-5600gt-3-6ghz-boost-4-6ghz-6-nhan-12-luong-19mb-am4-1_a3b93f80457b41dcaceba9e11e1dc21e.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/u-ly-amd-ryzen-5-5600gt-3-6ghz-boost-4-6ghz-6-nhan-12-luong-19mb-am4-2_086a87ffb2044bf68a0308a7b3e89db6.jpg\"]",
+        "tags": {
+            "core_series": "Ryzen 5",
+            "socket": "AM4",
+            "core_type": "AMD 5000 Series"
+        },
+        "cost": 399000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 7 5700 \/ 3.7GHz Boost 4.6GHz \/ 8 nhân 16 luồng \/ 20MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-7-5700x-1_e49a2_227bf9849bf64b6aa3d98631b5c617ab.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-7-5700x-2_c166a_f6dba6429d604fbf92d8d8526db9484d.png\"]",
+        "tags": {
+            "core_type": "AMD 5000 series",
+            "socket": "AMD AM4",
+            "core_series": "AMD Ryzen 7"
+        },
+        "cost": 479000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 7 5700X3D \/ 3.0GHz Boost 4.1GHz \/ 8 nhân 16 luồng \/ 100MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/8ghz-boost-4-7ghz-8-nhan-16-luon_0a6b8aebafb3469f987ba5200d6833e9.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-7-5700x-2_c166a_473e2e3407544eb59ae5ccc41e5cfeee.png\"]",
+        "tags": {
+            "socket": "AMD AM4",
+            "core_type": "AMD 5000 series",
+            "core_series": "AMD Ryzen 7"
+        },
+        "cost": 649000000,
+        "price": 699000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 8500G \/ 3.5GHz Boost 5.0GHz \/ 6 nhân 12 luồng \/ 22MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-bo-vi-xu-ly-amd-ryzen-5-8500g-1_95095ec638944459989cfed99eef9e61.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-bo-vi-xu-ly-amd-ryzen-5-8500g-2_8f75eab50f0f4bbca69ddb4bc386a1c9.png\"]",
+        "tags": {
+            "socket": "AMD AM5",
+            "core_type": "AMD 8000 series",
+            "core_series": "AMD Ryzen 5"
+        },
+        "cost": 419000000,
+        "price": 499000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 8600G \/ 4.3GHz Boost 5.0GHz \/ 6 nhân 12 luồng \/ 22MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-bo-vi-xu-ly-amd-ryzen-5-8600g-1_8d200390a2de4022b8b0d3131730a762.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-bo-vi-xu-ly-amd-ryzen-5-8600g-2_5dc4454b7cb34e24864b11eb4afe21cc.png\"]",
+        "tags": {
+            "core_series": "Ryzen 5",
+            "socket": "AM5",
+            "core_type": "AMD 8000 Series"
+        },
+        "cost": 529000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 7 8700G \/ 4.2GHz Boost 5.1GHz \/ 8 nhân 16 luồng \/ 24MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-bo-vi-xu-ly-amd-ryzen-7-8700g-1_8dc602aee46e43a89d055cce370bf51f.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-bo-vi-xu-ly-amd-ryzen-7-8700g-2_b297ad2e1a454c1a9335a15c355d1189.png\"]",
+        "tags": {
+            "core_type": "AMD 8000 Series",
+            "socket": "AM5",
+            "core_series": "Ryzen 7"
+        },
+        "cost": 769000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen Threadripper Pro 7995WX\/ 2.5GHz Boost 5.1GHz \/ 96 nhân 192 luồng \/ 480MB \/ sTR5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/232241953-a_amd_threadripperpro_pib_left_a109226ec8a545acbd8da631f7a0036d.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/232241953-a_amd_threadripperpro_pib_right_89d3012e1e4c43c49284f9c9d11db099.png\"]",
+        "tags": {
+            "core_type": "AMD 3000 series",
+            "socket": "sTR5",
+            "core_series": "Threadripper Pro"
+        },
+
+        "cost": 29200000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen Threadripper Pro 7985WX\/ 3.2GHz Boost 5.1GHz \/ 64 nhân 128 luồng \/ 320MB \/ sTR5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-bo-vi-xu-ly-amd-ryzen-threadripper-pro-7985w-2_5d5e3dda2f5d4296a16d7ce2730c76ac.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-bo-vi-xu-ly-amd-ryzen-threadripper-pro-7985w-1_89ecd1addb794b25a3acb2e8616c71ee.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-bo-vi-xu-ly-amd-ryzen-threadripper-pro-7985w-3_e96134249cbc4f24b1a63323302ebb3d.png\"]",
+        "tags": {
+            "core_type": "AMD 3000 series",
+            "socket": "sTR5",
+            "core_series": "Threadripper Pro"
+        },
+        "cost": 21200000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen Threadripper Pro 7975WX\/ 4.0GHz Boost 5.3GHz \/ 32 nhân 64 luồng \/ 160MB \/ sTR5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/232241953-a_amd_threadripperpro_pib_left_72e83101838b407ab7f249d9e7faa724.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/232241953-a_amd_threadripperpro_pib_right_5de72a0d143a4dab8007e4fe8105f497.png\"]",
+        "tags": {
+            "core_type": "AMD 3000 series",
+            "socket": "sTR5",
+            "core_series": "Threadripper Pro"
+        },
+        "cost": 11000000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen Threadripper Pro 7965WX\/ 4.2GHz Boost 5.3GHz \/ 24 nhân 48 luồng \/ 152MB \/ sTR5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/232241953-a_amd_threadripperpro_pib_left_05aae2965de943fd8984ea309c47d4f6.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/232241953-a_amd_threadripperpro_pib_right_469a1fd04221421cbfbce4ffff138a46.png\"]",
+        "tags": {
+            "core_type": "AMD 3000 series",
+            "socket": "sTR5",
+            "core_series": "Threadripper Pro"
+        },
+        "cost": 7599000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen Threadripper 7980X\/ 3.2GHz Boost 5.1GHz \/ 64 nhân 128 luồng \/ 320MB \/ sTR5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/232241951-a_amd_threadripper_pib_left_829bc66696384a749e0f5dcb54faef86.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/232241951-a_amd_threadripper_pib_right_763ff102bc7e4c40b5d469edf1cb37d0.png\"]",
+        "tags": {
+            "core_type": "AMD 5000 series",
+            "socket": "sTR5",
+            "core_series": "Threadripper"
+        },
+        "cost": 14199000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen Threadripper 7970X\/ 4.0GHz Boost 5.3GHz \/ 32 nhân 64 luồng \/ 160MB \/ sTR5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/232241951-a_amd_threadripper_pib_left_2c3f9483e22e4becab0878b17a46fa6c.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/232241951-a_amd_threadripper_pib_right_7af39f2808314e89b569b782a32d1eb4.png\"]",
+        "tags": {
+            "core_type": "AMD 5000 series",
+            "socket": "sTR5",
+            "core_series": "Threadripper"
+        },
+        "cost": 7199000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen Threadripper 7960X\/ 4.2GHz Boost 5.3GHz \/ 24 nhân 48 luồng \/ 152MB \/ sTR5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/232241951-a_amd_threadripper_pib_left_3981335404a647cd870246b0f001178b.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/232241951-a_amd_threadripper_pib_right_3358626cdf214e8eb903d8fa9f6aa635.png\"]",
+        "tags": {
+            "core_type": "AMD 5000 series",
+            "socket": "sTR5",
+            "core_series": "Threadripper"
+        },
+        "cost": 4299000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 9 5950X \/ 3.4GHz Boost 4.9GHz \/ 16 nhân 32 luồng \/ 64MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/-3-4ghz-boost-4-9ghz-16-nhan-32-luong_44080d881bbc4828b07fde3d76fd7955_e6c12721e7c740ef8e4ca29903a8ff7c.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/-3-4ghz-boost-4-9ghz-16-nhan-32-luong_00877b528d9748c295b6718198b93507_e839252eea774743978268aa333ea24c.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/b-3-8ghz-boost-4-7ghz-8-nhan-16-luong_6554996f3b99442da71bbc428a92da03_2db3f554d78a411ea0aecca2758b89a7.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/-4ghz-boost-4-9ghz-16-nhan-32-luong-0_37079f5643be41e890c8536c970de2bf_4273966e3e2647daa11b1121b4d6d798.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/-4ghz-boost-4-9ghz-16-nhan-32-luong-1_d4272b8efed54f3caec6cd0941650851_743f00b7c56b4f35ac89481fb4617624.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/-4ghz-boost-4-9ghz-16-nhan-32-luong-2_3c5a7be085fb4980950224a16d0ced83_4c73b99564a84aafa8fdfd29d70accea.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/-4ghz-boost-4-9ghz-16-nhan-32-luong-3_c157df567359465fb2001eda8a374d5f_078409d71a174990ad3de1e22b65595f.jpg\"]",
+        "tags": {
+            "core_type": "AMD 5000 series",
+            "core_series": "AMD Ryzen 9",
+            "socket": "AMD AM4"
+        },
+        "cost": 1059000000,
+        "price": 2299000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 9 5900X \/ 3.7GHz Boost 4.8GHz \/ 12 nhân 24 luồng \/ 64MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/ghz-boost-4-8ghz-12-nhan-24-luong-666_c768e9d619a0477ca7433bd76ffc073c_ec8561085dec43d5b9970d55d665019c.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/-3-7ghz-boost-4-8ghz-12-nhan-24-luong_37c9b8b6804944f7ada5d5630bd57537_a2c2df1669cd414ca612f72eecbc971c.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/7ghz-boost-4-8ghz-12-nhan-24-luong-11_41651df209264c15a5f8237ab52a7e4c_b63d16af43264505bfbc4499dc433331.png\"]",
+        "tags": {
+            "core_type": "AMD 5000 series",
+            "core_series": "AMD Ryzen 9",
+            "socket": "AMD AM4"
+        },
+        "cost": 859000000,
+        "price": 1529000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 7 5800X \/ 3.8GHz Boost 4.7GHz \/ 8 nhân 16 luồng \/ 32MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/8ghz-boost-4-7ghz-8-nhan-16-luong-666_675f75aeff4149f1bd15189673faf87e_af3998ec09ff46e88a5bfe54070c21b0.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/3-8ghz-boost-4-7ghz-8-nhan-16-luong-4_14cf3caac7f448c7811bd9b1366087ed_6c91c60c949343a9a0c01fb730d652b8.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/b-3-8ghz-boost-4-7ghz-8-nhan-16-luong_a9d87d4e614f491089357c7f040584d4_ef8820abcec04fd396760c73e2972b3b.png\"]",
+        "tags": {
+            "core_series": "AMD Ryzen 7",
+            "socket": "AMD AM4",
+            "core_type": "AMD 5000 series"
+        },
+        "cost": 629000000,
+        "price": 679000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 5600X \/ 3.7GHz Boost 4.6GHz \/ 6 nhân 12 luồng \/ 32MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/3-7ghz-boost-4-6ghz-6-nhan-12-luong-1_064ea02033974b0fae49158951cc74dd_b68071833a2a4ca797c7c330d6cf8412.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/3-7ghz-boost-4-6ghz-6-nhan-12-luong-2_6063e1f4a9b048c3b174612e21268cb9_440fcd4970f24642a144b19f72c90a05.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/3-7ghz-boost-4-6ghz-6-nhan-12-luong-3_d5fdd284d62c4333bc906a6bddca218b_e3f4def8f50343b5ae407d3d3b1a0ed3.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/3-7ghz-boost-4-6ghz-6-nhan-12-luong-4_5e13ccbbb1944eb999611266b8a6cfd1_5aaa40293033454b9c61f1cb55d76ffa.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/3-7ghz-boost-4-6ghz-6-nhan-12-luong-6_167f2550f47e49498dbbcbc955278ecc_6433636327b747c9ad3175496d4b73e7.jpg\"]",
+        "tags": {
+            "socket": "AM4",
+            "core_series": "Ryzen 5",
+            "core_type": "AMD 5000 Series"
+        },
+        "cost": 449000000,
+        "price": 459000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen Threadripper Pro 3995WX \/ 2.7GHz Boost 4.2GHz \/ 64 nhân 128 luồng \/ 256MB \/ sWRX8",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/21728329_threadripperpro_pib_3d_right_3b7a91e6d79349c0b9ebfa13a70cc315_64e3289646d74847a4172d0eee019094.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/21728329_threadripper_pro_wof_3d_left_1bc65f411eb74da5b4d813ea3c862051_6270e5179ff249c2893c9def15743649.png\"]",
+        "tags": {
+            "core_type": "AMD 3000 series",
+            "socket": "sWRX8",
+            "core_series": "Threadripper Pro"
+        },
+        "cost": 14099000000,
+        "price": 15099000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen Threadripper Pro 3955WX \/ 3.9GHz Boost 4.3GHz \/ 16 nhân 32 luồng \/ 64MB \/ sWRX8",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/-amd-ryzen-threadripper-pro-3955wx-1s_56d0a61cbd6e468e8ed6166c911b9851_71adb9b0d1b04b3097825dbd5f15ca1b.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/-amd-ryzen-threadripper-pro-3955wx-2s_3c55abdd4a3b4f7b8b67f05265b09131_0c33af70ac8d4c438004f22994bb378d.png\"]",
+        "tags": {
+            "core_type": "AMD 3000 series",
+            "socket": "sWRX8",
+            "core_series": "Threadripper"
+        },
+        "cost": 2989000000,
+        "price": 3489000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 7 5700G \/ 3.8GHz Boost 4.6GHz \/ 8 nhân 16 luồng \/ 16MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/a_amdryzen7_wgraphics_3dpib_right_row_ccde9b4f0c224a96992d0a05537119fb_3053f90adb96413b944eb2c2d53460c4.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/-a_amdryzen7_wgraphics_3dpib_left_row_243371f18f4d4820b08482b68c594ca6_4a21aba42c0c44d59b24ff93fdaa7fbc.png\"]",
+        "tags": {
+            "socket": "AM4",
+            "core_type": "AMD 5000 Series",
+            "core_series": "Ryzen 7"
+        },
+        "cost": 499000000,
+        "price": 999000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 5600G \/ 3.9GHz Boost 4.4GHz \/ 6 nhân 12 luồng \/ 16MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/a_amdryzen5_wgraphics_3dpib_right_row_99e7de9476c8487fa129b02a0d338ea3_c4301323354744c18da49d272dff73ab.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/-a_amdryzen5_wgraphics_3dpib_left_row_df0ad092b2964edcb340272a7b81b9d1_d42af4c2f1474370a05737ad2c7f07fe.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-5600g-0_52c89d0db0ad482d869b542d18c07a09_54c9940a365b449ab8d5f1c21d8ac14b.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-5600g-1_78fdd912bc664c50b79e8d9e471d7017_02bf0a9fa256425680c032f9fe2731bd.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-5600g-2_5180f7d93e644ea0959fe185651b9a2e_0ff1d80bbd2e408dad2c282deb0edf66.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-5600g-3_afc8aef48e82431d9b1420a5e0dd3a0c_8a3647089d2e45f48555e036ed01d66a.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-5600g-4_88062e976a3545bab75cff7cc04e46be_670b025c29754f5581fa867b4e34f793.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-5600g-5_72f37d64a1e548eba03387ee199da030_7aa2be9b3ee446dd8e83ca70013ff14d.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-5600g-6_313a2ca33ed941958fe193f579f39a9f_dd2579796b6441dab3a75550f26ba636.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-5600g-7_2b6439e18fb64b9f8266e3dcbe9221cc_088da07acdd84fa2a3232372446bcf2c.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-5600g-8_7dee7d6163414f1aa7fb97446231d8ee_48bcaa18902148ea9a7a87745e70023a.jpg\"]",
+        "tags": {
+            "socket": "AM4",
+            "core_series": "Ryzen 5",
+            "core_type": "AMD 5000 Series"
+        },
+        "cost": 349000000,
+        "price": 599000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 7 5800X3D \/ 3.4GHz Boost 4.5GHz \/ 8 nhân 16 luồng \/ 96MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/_row_ccde9b4f0c224a96992d0a05537119fb_d4abc647ec9e43bd893c5b5fd3a17eab_819f5cb9a36a4c44a046a1201138ec2d.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/14362-a_ryzen7_5000_3dpibwof_left_row_5d8b014c47ff4c50889a7936dd69ae70_1b2cdd1334d84dfb8d7685e96f222d0c.png\"]",
+        "tags": {
+            "core_series": "AMD Ryzen 7",
+            "socket": "AMD AM4",
+            "core_type": "AMD 5000 series"
+        },
+        "cost": 869000000,
+        "price": 1140000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 7 5700X \/ 3.4GHz Boost 4.6GHz \/ 8 nhân 16 luồng \/ 32MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-7-5700x-1_e49a228eeea242afb12a8848a4746f37_cb3aa982b8034cd6876c2ba6f70ab24b.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-7-5700x-2_c166a4e5ff604eab87a370e7078896df_4051c248b08344eebfdd0b538eff9c2b.png\"]",
+        "tags": {
+            "socket": "AM4",
+            "core_type": "AMD 5000 Series",
+            "core_series": "Ryzen 7"
+        },
+        "cost": 529000000,
+        "price": 529000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 5600 \/ 3.5GHz Boost 4.4GHz \/ 6 nhân 12 luồng \/ 32MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-5600-1_cc489afe754e4bee9479a0f465c19ad8_2d93e97db43746a3a0985ec1fe0ed249.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-5600-2_7437042f90ac4859b1d269d62a3394fe_564ae5f60dd24b96b9df90b32aaacc29.png\"]",
+        "tags": {
+            "socket": "AM4",
+            "core_type": "AMD 5000 Series",
+            "core_series": "Ryzen 5"
+        },
+        "cost": 279000000,
+        "price": 379000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 5500 \/ 3.6GHz Boost 4.2GHz \/ 6 nhân 12 luồng \/ 16MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/20619238-a_ryzen5_sr1_3dpib_right_row_a5c9aa7c8c6642208ef8225f07fc38e0_fb65fa52e903447a9edf1a41eff5de10.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/20619238-a_ryzen5_sr1_3dpib_left_row_e55e6558848b4dcf9c102d898c3cde0a_ae2546886c5b410083276cde0075bb15.png\"]",
+        "tags": {
+            "socket": "AM4",
+            "core_series": "Ryzen 5",
+            "core_type": "AMD 5000 Series"
+        },
+        "cost": 239000000,
+        "price": 259000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen Threadripper PRO 5995WX \/ 2.7GHz Boost 4.5GHz \/ 64 nhân 128 luồng \/ 292MB \/ sWRX8",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/1_c383dd2636d546458af57aa55b3e3ef7_b481e5aa7058445f89df25a05434059f.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/2_3798ecb087b84b01a002dcb668d805e1_2ef624a293c946fc8b9e69e9bab50401.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/3_43a27fa7c243499c9e367c4028a18965_c79a31b3ec9841dcb00f3a689cc1c2dc.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/4_facccbc42b704bb1875f931a457b3794_b797a799e4874086aaf1e7274959ed7f.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/5_22a445f44b86445ea854102792e54371_810cf0e492f148fe868f88d583148568.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/6_7950b4f5085e4733b8ac35e400bc2b6b_e7b10ef3f96e4d48bfd9d93d561ed4f1.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/7_7a796bebf15347adad6b8d902e377137_a8d3ea63157a4b84bf2d924db94dfcfa.jpg\"]",
+        "tags": {
+            "core_type": "AMD 3000 series",
+            "socket": "sWRX8",
+            "core_series": "Threadripper Pro"
+        },
+        "cost": 18000000000,
+        "price": 17500000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen Threadripper PRO 5975WX \/ 3.6GHz Boost 4.5GHz \/ 32 nhân 64 luồng \/ 146MB \/ sWRX8",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/1_d72a85f70c3b440992fe9c7ffd0aabe7_d4441105e85840df97e092449ce03e5e.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/2_68904edb20724181954222b207625cdd_c3147dcd2cd74682aec611b4e1a9bd3c.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/3_afacda0ce30949c68c7eaca634fad7f6_2a29b2345e6f4ae289a1780b50510e19.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/4_e9abdfa6c9ae4ccbb63c18cc7a445d58_00ba7662232748c2b5b6ff4977323daa.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/6_5128af837a244e9d80f6129a45edcaf7_3d051f47ee66410b85ab23f19deeb953.jpg\"]",
+        "tags": {
+            "core_type": "AMD 3000 series",
+            "socket": "sWRX8",
+            "core_series": "Threadripper Pro"
+        },
+        "cost": 9199000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen Threadripper PRO 5965WX \/ 3.8GHz Boost 4.5GHz \/ 24 nhân 48 luồng \/ 141.5MB \/ sWRX8",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/2112_3331d61852848a3e00c4ad9f18a0e6f7_22ac19a6e7fe4ec5a7cc3aace14de987_df7becf1e35a461aad5babcdc6580873.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/4014_14bbfc95616124dfe311a0584a6a6e9d_e64626aba6f44285bc1022b15134abeb_f52f527c2eee44d1afa007b410933ca1.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/8629_8ec787d41ebb41b24abc6a828e7b9485_7fd7d60b73534b03bf4169ee5bfefee9_dc21bc35f31242b7a9f29a321b707aa8.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/8452_c07f8c8c15c1bbf0f39eafe53ba55e1a_bd90532ee0dc4bfeb3d7ec077987a841_71a8e1999fc44414815e9dadb22dad56.jpg\"]",
+        "tags": {
+            "core_type": "AMD 3000 series",
+            "socket": "sWRX8",
+            "core_series": "Threadripper Pro"
+        },
+        "cost": 6599000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 4500 \/ 3.6GHz Boost 4.1GHz \/ 6 nhân 12 luồng \/ 11MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/amd1_8bb5a6a47c154c4f92f45770ba53eeb5_269ec8149b994f77abad19bc0e46b08a.jpg\"]",
+        "tags": {
+            "core_series": "AMD Ryzen 5",
+            "socket": "AMD AM4",
+            "core_type": "AMD 4000 series"
+        },
+        "cost": 209000000,
+        "price": 249000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 3 3200G \/ 3.6GHz Boost 4.0GHz \/ 4 nhân 4 luồng \/ 4MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_5_3200g_gearvn_e799782ec0cd4d46b675a04c2a399a45_e18d2021b0a844239691ebc57beb1c2a.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ndgen_ryzen3_radeon_stealth_3d_row_lf_c6e936f7b7ac418eba02ab3a6b91f4da_4a4c8149611346b2b477b2185dde06cd.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ndgen_ryzen3_radeon_stealth_3d_row_bf_16b40cb9927f43738efb11694b33d6e7_f9d82b9faee1423d9bbd55fcae710411.png\"]",
+        "tags": {
+            "core_series": "Ryzen 3",
+            "core_type": "AMD 3000 Series",
+            "socket": "AM4"
+        },
+        "cost": 199000000,
+        "price": 229000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 9 7950X \/ 4.5GHz Boost 5.7GHz \/ 16 nhân 32 luồng \/ 81MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_9_-_1_fa0f5db1db294e6fa653eb37cab6f3fa_0885fb4b6488450f921dc3cdc2c8f520.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_9_-_2_9b26dc593d4e4f888aa98a5f2b870b8e_e7419d0256b5480bac4cd2f059b2f2be.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_9_-_3_6142c4e7894948e6873cd23219a8bbe0_936c423e3707435282bcd0cf58353906.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_9_-_4_5409a3d740a948f2b2c42294758973e5_6ca79fd836d042f9997b0848c65725cb.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_9_-_5_f480f69a54564900919c0083748617a0_d94112f6bbf24cadaad30afaa9f546c3.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_9_-_6_cef4588b98264adc9662ff4fe0b5c66e_6cb905acf345469a90c05b08ff73c7e8.jpg\"]",
+        "tags": {
+            "socket": "AMD AM5",
+            "core_type": "AMD 7000 series",
+            "core_series": "AMD Ryzen 9"
+        },
+        "cost": 1519000000,
+        "price": 1959000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 9 7900X \/ 4.7GHz Boost 5.6GHz \/ 12 nhân 24 luồng \/ 76MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_9_-_1_5157911128a742f3bde4732cf4abdfb2_806c446fab4b42b6b6c71b298e08f563.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_9_-_2_9b1a6dfd05d74c1cb19ef924bb4f913e_860f1f127f5f4cdea7ba26660494832c.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_9_-_3_cb6e1b5f655441c7afad32960b333b51_44c3301e8bbd44429bdce8bd3f4ac125.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_9_-_4_e0c58cb41e8d48348bac13b9d23e1dcb_b3c78c040cd747409bbbe2a5557815cd.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_9_-_5_afacf90d4dc74c62b02329bce5df9bcf_feadfb0d9afa4a3194962ec89d02a721.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_9_-_6_590de7b37b9d48e3bbc927efef047013_594158af2bfa442b9885389139ddc888.jpg\"]",
+        "tags": {
+            "core_type": "AMD 7000 series",
+            "socket": "AMD AM5",
+            "core_series": "AMD Ryzen 9"
+        },
+        "cost": 1099000000,
+        "price": 1239000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 7 7700X \/ 4.5GHz Boost 5.4GHz \/ 8 nhân 16 luồng \/ 40MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_7_-_1_00957bbe7b8542308c897a90d439b1fd_e1c9a16c537d47bb9768828dddb332d0.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_7_-_2_d2f0fac1939445ab8486c6cd76479553_2703ab1a78324c9a8d32f0a673ecdf2c.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_7_-_3_431db88f1347484089e005c6e51baea8_efcd3b9697c7409591f5465eb692aea4.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_7_-_4_67ef44165ce247cc8a353fa5051274ae_3e628bccf3e54ca1a0c4f726ab211b54.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_7_-_5_5d1dcccadccb4177835a5bea2e27d7d7_5de4bc945bc3423b9c25cd5670b6d566.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_7_-_6_55858348bf0f45cd8af0f02634a1dabb_18dbdab8750342ab83002777f1365be8.jpg\"]",
+        "tags": {
+            "core_series": "Ryzen 7",
+            "socket": "AM5",
+            "core_type": "AMD 7000 Series"
+        },
+        "cost": 929000000,
+        "price": 1129000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 7600X \/ 4.7GHz Boost 5.3GHz \/ 6 nhân 12 luồng \/ 38MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_5_-_1_be51e69b02cf4ed78a758a6337e56a27_ae6fad038dff4fa985e2e4b86abc8d85.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_5_-_2_b53ea102cbc34ed78a62d23d14cf83e9_676dfc4e441d41c08dbb3a0b26ab5f15.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_5_-_3_53bef88cf04e407b8d578a2d0c7acbf7_3fcec5467f014f868841da28e8e9d66a.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_5_-_4_851e05a5c72d4a34877e0993c7a44c06_b83d56bddf51402a9bec6e06bb921138.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_5_-_5_80ee9d19d9194bdbb22d3ccb9873e51a_fac57d3c24d24604a91373b52870d589.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen_5_-_6_49f4c969280a415aac483058573c47e6_2cb593e5549d4af7abc45dfac762e51b.jpg\"]",
+        "tags": {
+            "core_series": "Ryzen 5",
+            "socket": "AM5",
+            "core_type": "AMD 7000 Series"
+        },
+        "cost": 649000000,
+        "price": 699000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Athlon 3000G \/ 3.5GHz \/ 2 nhân 4 luồng \/ 5MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-athlon-3000g_9a96ebfbbf3f43c7a61cdba59b00e5b5_fc7e2a8f09b24c55b154d39cf9ce96a7.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/nhan-4-luong-radeon-vega-3-graphics-6_e3613c9098ec457190a48ecf2aeff9f5_220f26133e4943e5b44e6ba23fc37f3f.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/nhan-4-luong-radeon-vega-3-graphics-8_7ec0c35c61ca4e9a86a4d8b9517794e9_af4e1e8a1c0b419d8301a8caf106e3ce.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/nhan-4-luong-radeon-vega-3-graphics-7_45c4e771f7e7433b9144c89360bd7aaf_a1b2a1d2a95345fcab3beb032e7cd394.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/nhan-4-luong-radeon-vega-3-graphics-9_19df142b89c34316a08a2437e75b717d_a4b1f83892ff424a85c0453b9619a9b3.jpg\"]",
+        "tags": {
+            "core_series": "Athlon",
+            "core_type": "AMD 3000 Series",
+            "socket": "AM4"
+        },
+        "cost": 129000000,
+        "price": 199000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 9 7950X3D \/ 4.2GHz Boost 5.7GHz \/ 16 nhân 32 luồng \/ 144MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/1404_f1d990ecc8dca59fe99135dc8416e89d_9b05a1ef25f040b5979fa23c8ab80bc9_05323a308ac9405c87ad3906a4bba1d6.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/0179_c61891d81f0ad06c3d72ccd6e6d578c4_367054b44106414b884859f1118429c7_6079767ee9b347e6bfdf049989bb2c1e.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/0089_108a97170a3f7a851a067646f49caff7_962da643d458447d9c3081bed6bd5c71_61f04e4661bb4d369389598afab5a8ef.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/7248_7e96cc48487bfe0e7a175245cff22ae6_c5e8242da9a2487c91b26ccb8d54e328_bf3f8210116e450fadba49890501e408.jpg\"]",
+        "tags": {
+            "core_type": "AMD 7000 Series",
+            "socket": "AM5",
+            "core_series": "Ryzen 9"
+        },
+        "cost": 1899000000,
+        "price": 0
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 9 7900X3D \/ 4.4GHz Boost 5.6GHz \/ 12 nhân 24 luồng \/ 140MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/8124_ff85223b917142e6226371d4d569d6e4_bccd2de1d6874f2193962970dcdd3fae_bd1291c63f9648778cfae7da812a0026.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/6450_454f2ed4771c1ed340ab2b9584c21632_87f91cae90c14dedb11c26ffaa752c42_5d3f28a421b541c991b284f3e5c78c4b.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/8403_b3dd016e001f9bc549ef08cc0aefe90a_9a5d00030a624a2286b868f21b886fa8_eb392afa2d164f6bb93e654af4d818ad.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/2424_2dd9281e1d14596efffcd23f1b5e18cf_bb5443d5245d40808a034dbf9e4233b8_b9623d6a793b49c0b440438783b2e720.jpg\"]",
+        "tags": {
+            "socket": "AM5",
+            "core_series": "Ryzen 9",
+            "core_type": "AMD 7000 Series"
+        },
+        "cost": 1499000000,
+        "price": 1529000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 9 7900 \/ 3.7GHz Boost 5.4GHz \/ 12 nhân 24 luồng \/ 76MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/6669_729d2369838617cfb4f22d213a14d729_4602c780620648eeb20ae74ddd89133a_f3776db9c13e4417a7cda3a3e35158d5.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/6540_76abfc8323fd109f2773294bfacb0330_de11015d8dc143f7a956f79d43e94b83_eb9f09e63c4947a1a55b7f11c1c0ae8c.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/6668_4cf603389b3777654db0a1edc19a9c99_d209a9345ec6435d882948644b164469_ef252a07b56641e09e90b8e464bc637a.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/6580_a45f68663224b8ab3afcbda3704a45a6_22e5ea5483e94f128a691b9fa9b67550_3181a6f2a9864f779822b2ca249e415e.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/1906_89c0bb3f2f0902887daf661f2892be6d_f9f83ac50f1d4f54b8234c6ac57ba7ac_b1fbf9edf9f6405a899a433909cd8fdb.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/6667_99edfb4d1d1e6668b405ba9f6b010446_9e87153b202f415b95da9dfb180b5553_8ffa21f111724015a37443b585aec2ff.jpg\",\"https:\/\/product.hstatic.net\/200000722513\/product\/6673_08f0f100787e64462759a361dd161bdd_bcf1da47ef704746a4ec87f008112a07_d04bd2e915924069951b6a916c8d173d.jpg\"]",
+        "tags": {
+            "core_series": "Ryzen 9",
+            "socket": "AM5",
+            "core_type": "AMD 7000 Series"
+        },
+        "cost": 1049000000,
+        "price": 1209000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 7 7800X3D \/ 4.2GHz Boost 5.0GHz \/ 8 nhân 16 luồng \/ 104MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/ryzen-7-7800x3d-600x600_30d6f05d43524a6c950830a366e4f4eb_2fb2daf9ef7d4faf92f0b1ed1612b1a0.png\"]",
+        "tags": {
+            "core_type": "AMD 7000 Series",
+            "socket": "AM5",
+            "core_series": "Ryzen 7"
+        },
+        "cost": 1289000000,
+        "price": 1299000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 7 7700 \/ 3.8GHz Boost 5.3GHz \/ 8 nhân 16 luồng \/ 40MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-7-7700-1_b5fe209e78084b978058d105a7c29ff3_3e536376e6fb40228a3455582b7c5756.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-7-7700-2_86af12d393d1469bade4d2245eb4732d_243c9fdf5d1e4dada80a433e9e965b3f.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-7-7700-3_971a2a0161fc411f93b0e05d128a41cd_5de1d25fc4d84964a124e1eb25e0160c.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-7-7700-4_7e1e856667c34c6b9d6795d4f7e5f1ce_374f6c1c453f4716acf18b6e1adee197.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-7-7700-5_1771b33fab304e31ae226727f773dd87_1f14db8290ce4741907f209c24c6569e.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-7-7700-6_a0d9adf1bad94cc480f989e36ab60b6d_390f1413db5f46159e47707228c1c18b.png\"]",
+        "tags": {
+            "core_series": "Ryzen 7",
+            "socket": "AM5",
+            "core_type": "AMD 7000 Series"
+        },
+        "cost": 879000000,
+        "price": 929000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 5 7600 \/ 3.8GHz Boost 5.1GHz \/ 6 nhân 12 luồng \/ 38MB \/ AM5",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-7600-1_fea6e6c8d31a452fb221d1d78261bc47_3169b43038fd4de98a0d0e32feca33a0.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-7600-2_b9ef1fcd62bd40c3a53727c8eb60da6c_49c84e1a94f04de3b0eec3836ed4e262.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-7600-3_b21c74b8c1e446fbb41c0a568072aa2a_14bc09a668fb4aeb88c9d040b3c91cf7.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-7600-4_cba206ed735c49f785a21149e986a4a9_1cc2eb0d384a4bd299e4dd48abd28a84.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-7600-5_d9d8d65934c5429db48d3cfca67946bb_28655c454f7844c2b2589f25a3e1d159.png\",\"https:\/\/product.hstatic.net\/200000722513\/product\/gearvn-amd-ryzen-5-7600-6_57fa009d087e4a48a6eabcf2c500ad6f_dae91cfed82a4971b163b529ad2b11f5.png\"]",
+        "tags": {
+            "core_series": "Ryzen 5",
+            "socket": "AM5",
+            "core_type": "AMD 7000 Series"
+        },
+        "cost": 579000000,
+        "price": 599000000
+    },
+    {
+        "title": "Bộ vi xử lý AMD Ryzen 3 4300G \/ 3.8GHz Boost 4.0GHz \/ 4 nhân 8 luồng \/ 6MB \/ AM4",
+        "images": "[\"https:\/\/product.hstatic.net\/200000722513\/product\/-4300g-processor-with-radeon-graphics_f334518704cc40e19a7198cee54d14f7_781e7f3301cd49a9b6180ae3d1bf0a97.png\"]",
+        "tags": {
+            "core_series": "Ryzen 3",
+            "core_type": "AMD 4000 Series",
+            "socket": "AM4"
+        },
+        "cost": 239000000,
+        "price": 279000000
+    }
+]

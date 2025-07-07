@@ -15,6 +15,7 @@ class BrandSeeder extends Seeder
         $faker = Faker::create();
 
         $brands = [
+            'GVN', //0
             'Intel', //1
             'AMD', //2
             'Dell', //3

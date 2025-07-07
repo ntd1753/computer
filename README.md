@@ -48,3 +48,11 @@ php artisan db:seed
 UserName: admin  
 Password: 123456  
 Email: admin@gmail.com
+
+
+```
+
+# embedded data production
+php artisan products:generate-embeddings
+
+```

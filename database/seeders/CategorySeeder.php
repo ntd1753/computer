@@ -22,8 +22,6 @@ class CategorySeeder extends Seeder
             ['name' => 'PC Gaming', 'icon' => 'https://cmscpt.s3.ap-southeast-1.amazonaws.com/category/pc-gaming.png', 'slug' => Str::slug('PC Gaming')],
             ['name' => 'PC Văn Phòng', 'icon' => 'https://cmscpt.s3.ap-southeast-1.amazonaws.com/category/office-computer.png', 'slug' => Str::slug('PC Văn Phòng')],
             ['name' => 'Server, Máy Ảo, Giả Lập', 'icon' => 'https://cmscpt.s3.ap-southeast-1.amazonaws.com/category/pc-server.png', 'slug' => Str::slug('Server, Máy Ảo, Giả Lập')],
-            ['name' => 'Phụ Kiện Máy Tính', 'icon' => 'https://cmscpt.s3.ap-southeast-1.amazonaws.com/category/gaming-gear.png', 'slug' => Str::slug('Phụ Kiện Máy Tính')],
-            ['name' =>'Tản Nhiệt Cooling', 'icon' => 'https://cmscpt.s3.ap-southeast-1.amazonaws.com/category/cooling.png', 'slug' => Str::slug('Tản Nhiệt Cooling')]
         ];
 
         foreach ($parentCategories as $parent) {
@@ -37,7 +35,7 @@ class CategorySeeder extends Seeder
 
             switch ($parent['name']) {
                 case 'Laptop':
-                    $subcategories = ['Laptop - Notebook Gaming', 'Laptop - Notebook Văn phòng'];
+                    $subcategories = ['Laptop Gaming', 'Laptop - Notebook Văn phòng'];
                     break;
                 case 'Linh Kiện Máy Tính':
                     $subcategories = ['Mainboard - Bo mạch chủ',
@@ -45,7 +43,9 @@ class CategorySeeder extends Seeder
                         'PSU - Nguồn máy tính', 'Case - Vỏ máy tính',
                         'RAM-Bộ nhớ trong',
                         'SSD - Ổ cứng SSD',
-                        'HDD - Ổ cứng HDD',];
+                        'HDD - Ổ cứng HDD',
+                        'Tản nhiệt Cooling',
+                        ];
                     break;
                 case 'PC Đồ Họa, Render 3D':
                     $subcategories = ['PC Render 3D', 'PC Thiết kế đồ họa'];
@@ -58,13 +58,6 @@ class CategorySeeder extends Seeder
                     break;
                 case 'Server, Máy Ảo, Giả Lập':
                     $subcategories = ['Server', 'Máy ảo', 'Máy giả lập'];
-                    break;
-                case 'Phụ Kiện Máy Tính':
-                    $subcategories = ['Chuột máy tính', 'Bàn phím máy tính', 'Tai nghe máy tính', 'Loa máy tính',
-                        'Webcam', 'Thiết bị mạng', 'USB', 'Ổ cứng di động', 'Thiết bị lưu trữ', 'Thiết bị khác'];
-                    break;
-                case 'Tản Nhiệt Cooling':
-                    $subcategories = ['Tản nhiệt khí', 'Tản nhiệt nước AIO', 'Quạt Tản Nhiệt'];
                     break;
             }
 
@@ -87,175 +80,52 @@ class CategorySeeder extends Seeder
                     'RAM-Bộ nhớ trong',
                     'SSD - Ổ cứng SSD',
                     'HDD - Ổ cứng HDD',
-                    'Tản nhiệt khí',
-                    'Tản nhiệt nước AIO',
-                    'Quạt tản nhiệt'
+                    'Tản nhiệt Cooling',
                 ])) {
                     $subSubcategories = [];
                     switch ($subcategory) {
                         case 'Mainboard - Bo mạch chủ':
                             $subSubcategories = [
-                                "Mainboard Intel Z790",
-                                "Mainboard Intel B760",
-                                "Mainboard Intel Z690",
-                                "Mainboard Intel B660",
-                                "Mainboard Intel H610",
-                                "Mainboard Intel Z590",
-                                "Mainboard Intel X299",
-                                "Mainboard Khác",
-                                "Mainboard AMD X670",
-                                "Mainboard AMD X570",
-                                "Mainboard AMD B650",
-                                "Mainboard AMD B550",
-                                "Mainboard AMD TRX40",
-                                "Mainboard AMD B450",
-                                "Mainboard AMD X870",
-                                "Mainboard Intel Z890"
+                                "Mainboard Intel",
+                                "Mainboard AMD",
                             ];
                             break;
                         case 'CPU - Bộ vi xử lý':
-                            $subSubcategories = [ "Intel Core i9",
-                                "Intel Core i7",
-                                "Intel Core i5",
-                                "Intel Core i3",
-                                "Intel Xeon",
-                                "AMD Ryzen 5",
-                                "AMD Ryzen 7",
-                                "AMD Ryzen 9",
-                                "AMD Ryzen Threadripper",
-                                "Intel Core Ultra 5",
-                                "Intel Core Ultra 7",
-                                "Intel Core Ultra 9"];
+                            $subSubcategories = ["CPU Intel", "CPU AMD"];
                             break;
                         case 'VGA - Card màn hình':
                             $subSubcategories = [
-                                "NVIDIA RTX 4090",
-                                "NVIDIA RTX 4080",
-                                "NVIDIA RTX 4070 4070Ti",
-                                "NVIDIA RTX 4060 4060Ti",
-                                "NVIDIA RTX 3080 3080Ti",
-                                "NVIDIA RTX 3070 3070Ti",
-                                "NVIDIA RTX 3060 3060Ti",
-                                "NVIDIA RTX 3050",
-                                "NVIDIA RTX 2060 Super",
-                                "NVIDIA GTX 1650 Super",
-                                "NVIDIA GTX 1660 1660Ti",
-                                "NVIDIA GTX 1050 1050Ti",
-                                "NVIDIA Quadro",
-                                "VGA AMD Radeon",
-                                "NVIDIA RTX 5090",
-                                "NVIDIA RTX 5080",
-                                "NVIDIA RTX 5070 5070Ti"
-                            ]
-                            ;
-                            break;
-                        case 'PSU - Nguồn máy tính':
-                            $subSubcategories = [
-                                "Nguồn Antec",
-                                "Nguồn Asus",
-                                "Nguồn Cooler Master",
-                                "Nguồn Gigabyte",
-                                "Nguồn Jetek",
-                                "Nguồn MSI",
-                                "Nguồn Super Flower",
-                                "Nguồn Deepcool",
-                                "Nguồn Huntkey",
-                                "Nguồn NZXT",
-                                "Nguồn Seasonic",
-                                "Nguồn Thermaltake",
-                                "Nguồn ALmordor"
-                            ]
-                            ;
-                            break;
-                        case 'Case - Vỏ máy tính':
-                            $subSubcategories = [
-                                "Case Antec",
-                                "Case Asus",
-                                "Case Cooler Master",
-                                "Case Corsair",
-                                "Case Deepcool",
-                                "Case Jetek",
-                                "Case MIK",
-                                "Case Monteck",
-                                "Case MSI",
-                                "Case NZXT",
-                                "Case Sama",
-                                "Case Segotep",
-                                "Case Xigmatek"
+                                "VGA NVIDIA",
+                                "VGA Radeon",
                             ]
                             ;
                             break;
                         case 'RAM-Bộ nhớ trong':
                             $subSubcategories = [
-                                "Ram Server ECC - Registered",
-                                "RAM KINGSTON",
-                                "RAM TEAMGROUP",
-                                "RAM ADATA",
-                                "RAM GSKILL",
-                                "RAM PNY",
-                                "RAM Corsair",
-                                "RAM Lexar",
-                                "RAM KINGMAX"
+                                "Ram DDR4",
+                                "Ram DDR5",
                             ]
                             ;
                             break;
                         case 'SSD - Ổ cứng SSD':
                             $subSubcategories = [
-                                "SSD Adata",
-                                "SSD MSI",
-                                "SSD PNY",
-                                "SSD Colorfull",
-                                "SSD Corsair",
-                                "SSD Gigabyte",
-                                "SSD Kingston",
-                                "SSD TeamGroup",
-                                "SSD Samsung",
-                                "SSD Western Digital",
-                                "SSD LEXAR",
-                                "SSD CRUCIAL"
+                                "SSD M.2 NVMe",
+                                "SSD M.2 SATA"
                             ]
                             ;
                             break;
                         case 'HDD - Ổ cứng HDD':
                             $subSubcategories = [
-                                "HDD Seagate",
-                                "HDD Toshiba",
-                                "HDD Western Digital"
+                               "HDD 3.5 inch",
+                                "HDD 2.5 inch"
                             ];
                             break;
-                        case 'Tản nhiệt khí':
+                        case 'Tản nhiệt Cooling':
                             $subSubcategories = [
-                                "Tản Nhiệt Khí Noctua",
-                                "Tản Nhiệt Khí Cooler Master",
-                                "Tản Nhiệt Khí Deepcool",
-                                "Tản Nhiệt Khí ID-Cooling",
-                                "Tản Nhiệt Khí Thermalright",
-                                "Tản nhiệt khí Jonsbo"
+                                "Tản nhiệt khí",
+                                "Tản nhiệt nước AIO",
+                                "Quạt tản nhiệt"
                             ];
-                            break;
-                        case 'Tản nhiệt nước AIO':
-                            $subSubcategories = [
-                                "Tản Nhiệt Nước Asus",
-                                "Tản Nhiệt Nước Corsair",
-                                "Tản Nhiệt Nước NZXT",
-                                "Tản Nhiệt Nước MSI",
-                                "Tản Nhiệt Nước Thermalright",
-                                "Tản Nhiệt Nước Thermaltake",
-                                "Tản Nhiệt Nước Cooler Master",
-                                "Tản Nhiệt Nước DeepCool"
-                            ];
-                            break;
-                        case 'Quạt tản nhiệt':
-                            $subSubcategories = [
-                            "Quạt tản nhiệt NZXT",
-                            "Quạt tản nhiệt Thermalright",
-                            "Quạt tản nhiệt Xigmatek",
-                            "Quạt tản nhiệt Coolermaster",
-                            "Quạt tản nhiệt EKWB",
-                            "Quạt tản nhiệt ID-Cooling",
-                            "Quạt tản nhiệt Jonsbo",
-                            "Quạt tản nhiệt Kenoo"
-                        ];
                             break;
                     }
 
