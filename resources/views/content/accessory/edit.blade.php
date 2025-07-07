@@ -198,7 +198,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Thông Số</h4>
-                        @include('components.product.'.$accessoryType, ["item" => $accessory->detail])
+                        @include('components.product.'.strtolower($accessoryType), ["item" => $accessory->detail])
                     </div>
                 </div>
 
