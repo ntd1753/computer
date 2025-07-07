@@ -45,7 +45,8 @@
             </div>
             <div class="row">
                 <div class="w-100 d-flex justify-content-center mt-4">
-                    <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i> <span>Tìm kiếm</span></button>
+                    <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i> <span>Tìm kiếm</span>
+                    </button>
 
                 </div>
             </div>
@@ -54,7 +55,9 @@
 
     <div>
         <a href="{{route('prebuiltPc.add')}}">
-            <button type="button" class="btn btn-primary waves-effect waves-light my-3"><i class="bx bx-plus"></i>Thêm Sản Phẩm</button>
+            <button type="button" class="btn btn-primary waves-effect waves-light my-3"><i class="bx bx-plus"></i>Thêm
+                Sản Phẩm
+            </button>
         </a>
     </div>
     <div class="row">
@@ -68,13 +71,13 @@
                             <th scope="col" class="text-start px-3">Tên Sản Phẩm</th>
                             <th scope="col" class="text-start px-3">Danh mục</th>
                             <th scope="col" style="width: 100px">Ảnh Preview</th>
-                            <th scope="col" >Giá Nhập</th>
-                            <th scope="col" >Giá Bán</th>
+                            <th scope="col">Giá Nhập</th>
+                            <th scope="col">Giá Bán</th>
                             <th scope="col">Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                            @include('content.preBuiltPC.row_table',['listItem'=>$listItem])
+                        @include('content.prebuiltPC.row_table',['listItem'=>$listItem])
                         </tbody>
                     </table>
                 </div>
