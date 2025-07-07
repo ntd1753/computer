@@ -63,7 +63,10 @@ class CustomPermission extends SpatiePermission
         'AddABanner' => 'AddABanner',
         'EditABanner' => 'EditABanner',
         'DeleteABanner' => 'DeleteABanner',
-
+        'ReviewManagement' => 'ReviewManagement',
+        'EditAReview' => 'EditAReview',
+        'FilterManagement' => 'FilterManagement',
+        "EditFilter" => 'EditFilter',
     ];
 
     public function roles(): \Illuminate\Database\Eloquent\Relations\BelongsToMany

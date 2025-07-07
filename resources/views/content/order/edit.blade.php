@@ -39,8 +39,8 @@
                     <div class="pb-3" style="border-bottom: 1px solid #e4e7ec;">
                         <div class="fw-medium fs-3 truncate">Thông tin khách hàng</div>
                     </div>
-                    <div class="d-flex mt-3"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="clipboard" data-lucide="clipboard" class="lucide lucide-clipboard w-4 h-4 text-slate-500 mr-2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> Name: <span class="underline decoration-dotted ms-1">{{$item->user->name}}</span> </div>
-                    <div class="d-flex mt-3"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="clipboard" data-lucide="clipboard" class="lucide lucide-clipboard w-4 h-4 text-slate-500 mr-2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> Email: <span class="underline decoration-dotted ms-1">{{$item->user->email}}</span> </div>
+                    <div class="d-flex mt-3"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="clipboard" data-lucide="clipboard" class="lucide lucide-clipboard w-4 h-4 text-slate-500 mr-2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> Name: <span class="underline decoration-dotted ms-1">{{$item->customer_name}}</span> </div>
+                    <div class="d-flex mt-3"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="clipboard" data-lucide="clipboard" class="lucide lucide-clipboard w-4 h-4 text-slate-500 mr-2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg> Email: <span class="underline decoration-dotted ms-1">{{$item->customer_email}}</span> </div>
                     <div class="d-flex mt-3"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="calendar" data-lucide="calendar" class="lucide lucide-calendar w-4 h-4 text-slate-500 mr-2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Phone Number: {{$item->customer_phone}} </div>
                     <div class="d-flex mt-3 pb-3" style="border-bottom: 1px solid #e4e7ec;"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="map-pin" data-lucide="map-pin" class="lucide lucide-map-pin w-4 h-4 text-slate-500 mr-2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Address: {{$item->customer_address}} </div>
                 </div>
@@ -104,8 +104,8 @@
                     <div class="modal-body">
                         <div  class="fs-3 my-1">Trạng thái</div>
                         <div class="mb-3">
-                            <label for="parent-category-input" class="form-label">Trạng thái đơn hàng</label>
-                            <select class="form-control select2" id="parent-category-input" name="order_status">
+                            <label  class="form-label">Trạng thái đơn hàng</label>
+                            <select class="form-control select2"  name="order_status">
                                 <option value="">Chọn trạng thái</option>
                                 @foreach(\App\Models\Order::$listOrderStatus as $key=>$orderStatus)
                                     <option value="{{$key}}" @if($item->order_status == $key) selected @endif>{{$orderStatus}}</option>
@@ -113,8 +113,8 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="parent-category-input" class="form-label">Trạng thái thanh toán</label>
-                            <select class="form-control select2" id="parent-category-input" name="payment_status">
+                            <label  class="form-label">Trạng thái thanh toán</label>
+                            <select class="form-control select2" name="payment_status">
                                 <option value="">Chọn trạng thái</option>
                                 @foreach(\App\Models\Order::$listPaymentStatus as $key=>$paymentStatus)
                                     <option value="{{$key}}" @if($item->payment_status == $key) selected @endif>{{$paymentStatus}}</option>
@@ -140,7 +140,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="projectname-input" class="form-label">Địa chỉ</label>
-                            <input id="projectname-input" name="phone" type="text" class="form-control"
+                            <input id="projectname-input" name="address" type="text" class="form-control"
                                    placeholder="" value="{{$item->customer_address}}" required>
                         </div>
 
@@ -161,11 +161,18 @@
             $('.frm_form_add').submit(function (e) {
                 e.preventDefault();
                 $.ajax({
-                    url: {{ route('order.update', $item->id) }},
+                    url: '{{ route('order.update', $item->id) }}',
                     type: 'post',
                     dataType: 'json',
                     data: $(this).serialize(),
                     beforeSend: function () {
+                        // Thêm token CSRF vào header của yêu cầu
+                        var token = $('meta[name="csrf-token"]').attr('content');
+                        $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': token
+                            }
+                        });
                         showPreload();
                     },
                     complete: function () {

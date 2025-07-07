@@ -17,12 +17,14 @@ use App\Models\PSU;
 use App\Models\Ram;
 use App\Models\Storage;
 use App\Models\VGA;
+use App\Traits\FillDataProduct;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Http\Request;
 
 class AccessoryController extends Controller
 {
+    use FillDataProduct;
     private function getCategories($model_type){
         return Category::where('type','=', $model_type)->whereNull('parent_id')->with('subCategories')->get();
     }
@@ -57,25 +59,7 @@ class AccessoryController extends Controller
         }
         return $accessoryDetail;
     }
-    protected function filterProduct($input, $accessory, $post, $product)
-    {
-        // Populate the existing product instance with the provided data
-        $product->name = $input['name'];
-        $product->slug = Str::slug($input['name']);
-        $product->type = Product::TYPE_ACCESSORY; // Adjust according to product type
-        $product->brand_id = $input['brand_id'];
-        $product->cost = $input['cost'];
-        $product->price = $input['price'];
-        $product->discount_type = $input['discount_type'] ?? null; // Default to null if not provided
-        $product->discount_value = $input['discount_value'] ?? null; // Default to null if not provided
-        $product->category_id = $input['category_id'];
-        $product->detail_id = $accessory->id; // Link product to accessory
-        $product->post_id = $post->id; // Link product to post
-        // Save the product
-        $product->save();
-        // Return the updated product
-        return $product;
-    }
+
 
     public function index($accessory_type, Request $request){
         $id = $request->get("id");
@@ -123,7 +107,7 @@ class AccessoryController extends Controller
         $accessory = Accessory::fillDataAccessory($validated,$accessory_type, $accessory, $accessoryDetail);
         $product = new Product();
 
-        $product = $this->filterProduct($validated,$accessory,$post,$product);
+        $product = $this->fillProduct($validated,$accessory,$post,$product, Product::TYPE_ACCESSORY);
         if ($request->has('images')) {
             $images = [];
             foreach ($request->get('images') as $item) {
@@ -160,7 +144,7 @@ class AccessoryController extends Controller
         $accessory = Accessory::fillDataAccessory($validated,$accessory_type, $accessory, $accessoryDetail);
         $product = Product::find($accessory->product->id);
 
-        $product = $this->filterProduct($validated,$accessory,$post,$product);
+        $product = $this->fillProduct($validated,$accessory,$post,$product, Product::TYPE_ACCESSORY);
         if ($request->has('images')) {
             $images = [];
             foreach ($request->get('images') as $item) {
@@ -179,5 +163,7 @@ class AccessoryController extends Controller
 
         return redirect()->route('accessory.index',['accessory_type'=>$accessory_type]);
     }
+
+
 
 }

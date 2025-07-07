@@ -71,4 +71,19 @@
         </div>
 
     </div>
+    <div class="col-12 row">
+        <div class="mb-3 col-sm-6">
+            <label for="quantity">Số lượng</label>
+            <input id="quantity" name="quantity" type="number" class="form-control">
+        </div>
+        <div class="mb-3 col-sm-6">
+            <label for="quantity">Sản phẩm Nổi bật</label>
+            <select class="form-control select2" name="is_bestseller">
+                @foreach(\App\Models\Product::$listSuggest as $key=>$value)
+                    <option value="{{$key}}">{{$value}}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+
 </div>

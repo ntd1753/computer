@@ -130,6 +130,10 @@
                                             Giảm Giá Trực Tiếp</option>
                                     </select>
                                 </div>
+                                <div class="mb-3 col-sm-6">
+                                    <label for="quantity">Số lượng</label>
+                                    <input id="quantity" name="quantity" type="number" class="form-control" value="{{$accessory->product->quantity}}">
+                                </div>
                             </div>
 
                             <div class="col-sm-6">
@@ -152,7 +156,7 @@
                                     >
                                         <option>Chọn Nhãn Hàng</option>
                                         @foreach($brands as $brand)
-                                            @if($accessory->brand_id == $brand->id)
+                                            @if($accessory->product->brand_id == $brand->id)
                                                 <option value="{{$brand->id}}" selected>{{$brand->name}}</option>
                                             @endif
                                                 <option value="{{$brand->id}}">{{$brand->name}}</option>

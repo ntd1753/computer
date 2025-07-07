@@ -61,18 +61,30 @@ class OrderController extends Controller
     }
     public function update(Request $request, $id)
     {
+//        dd($request->all());
+
         $order = Order::find($id);
+
         if (!$order) {
             return response()->json(['success' => false, 'message' => "Cập nhât thất bại, không tìm thấy đơn hàng"]);
         }
         $request->validate([
             'order_status' => 'required|in:' . implode(',', array_keys(Order::$listOrderStatus)),
             'payment_status' => 'required|in:' . implode(',', array_keys(Order::$listPaymentStatus)),
+            'email' => 'required|email',
+            'name' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
         ]);
+
         $order->update([
             'order_status' => $request->input('order_status'),
             'payment_status' => $request->input('payment_status'),
+            'customer_name' => $request->input('name'),
+            'customer_email' => $request->input('email'),
+            'customer_phone' => $request->input('phone'),
+            'customer_address' => $request->input('address'),
         ]);
-        return response()->json(['success' => true, 'message' => 'Cập nhât thành công', 'url' => route('coupon.index')]);
+        return response()->json(['success' => true, 'message' => 'Cập nhât thành công', 'url' => route('order.index')]);
     }
 }

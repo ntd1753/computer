@@ -13,7 +13,7 @@
         @endslot
     @endcomponent
     <div class="card p-3">
-        <form class="mt-4" method="GET" action="{{route('pc.index')}}">
+        <form class="mt-4" method="GET" action="{{route('prebuiltPc.index')}}">
             <div class="row">
                 <div class="col-lg-6 col-sm-6">
                     <div class="mb-0">
@@ -52,12 +52,11 @@
         </form>
     </div>
 
-{{--    <div>--}}
-{{--        <a href="{{route('pc.add')}}">--}}
-{{--            <button type="button" class="btn btn-primary waves-effect waves-light my-3"><i class="bx bx-plus"></i>Thêm Sản Phẩm</button>--}}
-
-{{--        </a>--}}
-{{--    </div>--}}
+    <div>
+        <a href="{{route('prebuiltPc.add')}}">
+            <button type="button" class="btn btn-primary waves-effect waves-light my-3"><i class="bx bx-plus"></i>Thêm Sản Phẩm</button>
+        </a>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <div class="">
